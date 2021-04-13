@@ -1,12 +1,13 @@
-<!DOCTYPE html>
-<html lang="en" dir="rtl">
+<!doctype html>
+<html lang="en">
 
-
-<!-- Mirrored from www.radixtouch.in/templates/admin/lorax/source/rtl/pages/examples/login2.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 03 Nov 2020 20:34:31 GMT -->
 <head>
-<meta charset="UTF-8">
-    <meta content="width=device-width, initial-scale=1" name="viewport" />
-    <title>Online Statistics</title>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"> -->
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Chart Sample</title>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
     <!-- Favicon-->
     <link rel="icon" href="{{asset('assets/images/favicon.ico')}}" type="image/x-icon">
     <!-- Plugins Core Css -->
@@ -16,18 +17,19 @@
     <link href="{{asset('assets/css/style.css')}}" rel="stylesheet">
     <!-- You can choose a theme from css/styles instead of get all themes -->
     <link href="{{asset('assets/css/styles/all-themes.css')}}" rel="stylesheet" />
-	<style>
-		.contact100-form-checkbox .form-check .form-check-label,
-		.wrap-input100 .material-icons {
-			text-align: right;
-		}
-		.default-select option{
-			color:#000;
-		}
-	</style>
+    <style>
+        .contact100-form-checkbox .form-check .form-check-label,
+        .wrap-input100 .material-icons {
+            text-align: right;
+        }
+
+        .default-select option {
+            color: #000;
+        }
+    </style>
 </head>
 
-<body class="light rtl">
+<body class="h-screen bg-gray-100">
     <!-- Page Loader -->
     <div class="page-loader-wrapper">
         <div class="loader">
@@ -37,16 +39,13 @@
             <p>Please wait...</p>
         </div>
     </div>
-    <!-- #END# Page Loader -->
-    <!-- Overlay For Sidebars -->
     <div class="overlay"></div>
-    <!-- #END# Overlay For Sidebars -->
-    <!-- Top Bar -->
+
+
     <nav class="navbar">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a href="#" onClick="return false;" class="navbar-toggle collapsed" data-toggle="collapse"
-                    data-target="#navbar-collapse" aria-expanded="false"></a>
+                <a href="#" onClick="return false;" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>
                 <a href="#" onClick="return false;" class="bars"></a>
                 <a class="navbar-brand" href="">
                     <img src="{{asset('assets/images/logo.png')}}" alt="" />
@@ -68,127 +67,9 @@
                             <i class="fas fa-expand"></i>
                         </a>
                     </li>
-                    <!-- #END# Full Screen Button -->
-                    <!-- #START# Notifications-->
-                   <!-- <li class="dropdown">
-                        <a href="#" onClick="return false;" class="dropdown-toggle" data-toggle="dropdown"
-                            role="button">
-                            <i class="far fa-bell"></i>
-                            <span class="label-count bg-orange"></span>
-                        </a>
-                        <ul class="dropdown-menu pullDown">
-                            <li class="header">NOTIFICATIONS</li>
-                            <li class="body">
-                                <ul class="menu">
-                                    <li>
-                                        <a href="#" onClick="return false;">
-                                            <span class="table-img msg-user">
-                                                <img src="../../assets/images/user/user1.jpg" alt="">
-                                            </span>
-                                            <span class="menu-info">
-                                                <span class="menu-title">Sarah Smith</span>
-                                                <span class="menu-desc">
-                                                    <i class="material-icons">access_time</i> 14 mins ago
-                                                </span>
-                                                <span class="menu-desc">Please check your email.</span>
-                                            </span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" onClick="return false;">
-                                            <span class="table-img msg-user">
-                                                <img src="../../assets/images/user/user2.jpg" alt="">
-                                            </span>
-                                            <span class="menu-info">
-                                                <span class="menu-title">Airi Satou</span>
-                                                <span class="menu-desc">
-                                                    <i class="material-icons">access_time</i> 22 mins ago
-                                                </span>
-                                                <span class="menu-desc">Please check your email.</span>
-                                            </span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" onClick="return false;">
-                                            <span class="table-img msg-user">
-                                                <img src="../../assets/images/user/user3.jpg" alt="">
-                                            </span>
-                                            <span class="menu-info">
-                                                <span class="menu-title">John Doe</span>
-                                                <span class="menu-desc">
-                                                    <i class="material-icons">access_time</i> 3 hours ago
-                                                </span>
-                                                <span class="menu-desc">Please check your email.</span>
-                                            </span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" onClick="return false;">
-                                            <span class="table-img msg-user">
-                                                <img src="../../assets/images/user/user4.jpg" alt="">
-                                            </span>
-                                            <span class="menu-info">
-                                                <span class="menu-title">Ashton Cox</span>
-                                                <span class="menu-desc">
-                                                    <i class="material-icons">access_time</i> 2 hours ago
-                                                </span>
-                                                <span class="menu-desc">Please check your email.</span>
-                                            </span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" onClick="return false;">
-                                            <span class="table-img msg-user">
-                                                <img src="../../assets/images/user/user5.jpg" alt="">
-                                            </span>
-                                            <span class="menu-info">
-                                                <span class="menu-title">Cara Stevens</span>
-                                                <span class="menu-desc">
-                                                    <i class="material-icons">access_time</i> 4 hours ago
-                                                </span>
-                                                <span class="menu-desc">Please check your email.</span>
-                                            </span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" onClick="return false;">
-                                            <span class="table-img msg-user">
-                                                <img src="../../assets/images/user/user6.jpg" alt="">
-                                            </span>
-                                            <span class="menu-info">
-                                                <span class="menu-title">Charde Marshall</span>
-                                                <span class="menu-desc">
-                                                    <i class="material-icons">access_time</i> 3 hours ago
-                                                </span>
-                                                <span class="menu-desc">Please check your email.</span>
-                                            </span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" onClick="return false;">
-                                            <span class="table-img msg-user">
-                                                <img src="../../assets/images/user/user7.jpg" alt="">
-                                            </span>
-                                            <span class="menu-info">
-                                                <span class="menu-title">John Doe</span>
-                                                <span class="menu-desc">
-                                                    <i class="material-icons">access_time</i> Yesterday
-                                                </span>
-                                                <span class="menu-desc">Please check your email.</span>
-                                            </span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="footer">
-                                <a href="#" onClick="return false;">View All Notifications</a>
-                            </li>
-                        </ul>
-                    </li>-->
                     <!-- #END# Notifications-->
                     <li class="dropdown user_profile">
-                        <a href="#" onClick="return false;" class="dropdown-toggle" data-toggle="dropdown"
-                            role="button">
+                        <a href="#" onClick="return false;" class="dropdown-toggle" data-toggle="dropdown" role="button">
                             <img src="{{asset('assets/images/prof.jpg')}}" width="32" height="32" alt="User">
                         </a>
                         <ul class="dropdown-menu pullDown">
@@ -196,22 +77,22 @@
                                 <ul class="user_dw_menu">
                                     <li>
                                         <a href="#" onClick="return false;">
-                                            <i class="material-icons">person</i>Profile
+                                            <i class="material-icons">person</i>الملف الشخصي
                                         </a>
                                     </li>
                                     <li>
                                         <a href="#" onClick="return false;">
-                                            <i class="material-icons">feedback</i>Feedback
+                                            <i class="material-icons">feedback</i>رأيك يهمنا
                                         </a>
                                     </li>
                                     <li>
                                         <a href="#" onClick="return false;">
-                                            <i class="material-icons">help</i>Help
+                                            <i class="material-icons">help</i>مساعدة
                                         </a>
                                     </li>
                                     <li>
                                         <a href="#" onClick="return false;">
-                                            <i class="material-icons">power_settings_new</i>Logout
+                                            <i class="material-icons">power_settings_new</i>تسجيل الخروج
                                         </a>
                                     </li>
                                 </ul>
@@ -238,8 +119,7 @@
                     <li class="sidebar-user-panel active">
                         <div class="user-panel">
                             <div class=" image">
-                                <img src="{{asset('assets/images/prof.jpg')}}" class="img-circle user-img-circle"
-                                    alt="User Image" />
+                                <img src="{{asset('assets/images/prof.jpg')}}" class="img-circle user-img-circle" alt="User Image" />
                             </div>
                         </div>
                         <div class="profile-usertitle">
@@ -248,16 +128,11 @@
                         </div>
                     </li>
                     <li class="active">
-                        <a href="{{url('/index1')}}" onClick="return false;" >
+                        <a href="{{url('/index1')}}" onClick="return false;">
                             <i class="fas fa-tachometer-alt"></i>
                             <span>Home</span>
                         </a>
                     </li>
-                    <!-- <a href="file:///C:/AppServ/www/lorax/pages/examples/profile.html" class="txt1">
-                            <i class="fas fa-address-book"></i>
-                            <span>Profile</span>
-                        </a> -->
-                      
                     <li>
                         <a href="#" onClick="return false;" class="menu-toggle">
                             <i class="fab fa-wpforms"></i>
@@ -270,7 +145,7 @@
                             <li>
                                 <a href="">Advanced Form</a>
                             </li>
-                            
+
                         </ul>
                     </li>
                     <li>
@@ -285,11 +160,11 @@
                             <li>
                                 <a href="{{url('/exportedTable')}}">Export Table</a>
                             </li>
-                           
+
 
                         </ul>
                     </li>
-                   
+
                     <li>
                         <a href="#" onClick="return false;" class="menu-toggle">
                             <i class="fas fa-chart-line"></i>
@@ -297,8 +172,8 @@
                         </a>
                         <ul class="ml-menu">
                             <li>
-                            <a href="{{url('/charts1')}}">charts1</a>
-                               
+                                <a href="{{url('/charts1')}}">charts1</a>
+
                             </li>
                             <li>
                                 <a href="{{url('/charts2')}}">chart2</a>
@@ -307,37 +182,22 @@
                             <li>
                                 <a href="{{url('/floatChart')}}">float chart</a>
                             </li>
-                            
+
                         </ul>
                     </li>
-                   
-                    <!-- <li>
-                        <a href="#" onClick="return false;" class="menu-toggle">
-                            <i class="fas fa-paw"></i>
-                            <span>Icons</span>
-                        </a>
-                        <ul class="ml-menu">
-                            <li>
-                                <a href="../icons/material-icons.html">Material Icons</a>
-                            </li>
-                            <li>
-                                <a href="../icons/font-awesome.html">Font Awesome</a>
-                            </li>
-                        </ul>
-                    </li> -->
-                  
+
                 </ul>
             </div>
             <!-- #Menu -->
-        </aside> <aside id="leftsidebar" class="sidebar">
+        </aside>
+        <aside id="leftsidebar" class="sidebar">
             <!-- Menu -->
             <div class="menu">
                 <ul class="list">
                     <li class="sidebar-user-panel active">
                         <div class="user-panel">
                             <div class=" image">
-                                <img src="{{asset('assets/images/prof.jpg')}}" class="img-circle user-img-circle"
-                                    alt="User Image" />
+                                <img src="{{asset('assets/images/prof.jpg')}}" class="img-circle user-img-circle" alt="User Image" />
                             </div>
                         </div>
                         <div class="profile-usertitle">
@@ -346,16 +206,12 @@
                         </div>
                     </li>
                     <li class="active">
-                        <a href="{{url('/index1')}}" onClick="return false;" >
+                        <a href="{{url('/index1')}}" onClick="return false;">
                             <i class="fas fa-tachometer-alt"></i>
                             <span>Home</span>
                         </a>
                     </li>
-                    <!-- <a href="file:///C:/AppServ/www/lorax/pages/examples/profile.html" class="txt1">
-                            <i class="fas fa-address-book"></i>
-                            <span>Profile</span>
-                        </a> -->
-                      
+
                     <li>
                         <a href="#" onClick="return false;" class="menu-toggle">
                             <i class="fab fa-wpforms"></i>
@@ -368,7 +224,7 @@
                             <li>
                                 <a href="">Advanced Form</a>
                             </li>
-                            
+
                         </ul>
                     </li>
                     <li>
@@ -383,11 +239,11 @@
                             <li>
                                 <a href="{{url('/exportedTable')}}">Export Table</a>
                             </li>
-                           
+
 
                         </ul>
                     </li>
-                   
+
                     <li>
                         <a href="#" onClick="return false;" class="menu-toggle">
                             <i class="fas fa-chart-line"></i>
@@ -395,8 +251,8 @@
                         </a>
                         <ul class="ml-menu">
                             <li>
-                            <a href="{{url('/charts1')}}">charts1</a>
-                               
+                                <a href="{{url('/charts1')}}">charts1</a>
+
                             </li>
                             <li>
                                 <a href="{{url('/charts2')}}">chart2</a>
@@ -405,25 +261,10 @@
                             <li>
                                 <a href="{{url('/floatChart')}}">float chart</a>
                             </li>
-                            
+
                         </ul>
                     </li>
-                   
-                    <!-- <li>
-                        <a href="#" onClick="return false;" class="menu-toggle">
-                            <i class="fas fa-paw"></i>
-                            <span>Icons</span>
-                        </a>
-                        <ul class="ml-menu">
-                            <li>
-                                <a href="../icons/material-icons.html">Material Icons</a>
-                            </li>
-                            <li>
-                                <a href="../icons/font-awesome.html">Font Awesome</a>
-                            </li>
-                        </ul>
-                    </li> -->
-                  
+
                 </ul>
             </div>
             <!-- #Menu -->
@@ -443,75 +284,16 @@
                 <div role="tabpanel" class="tab-pane in active in active stretchLeft" id="skins">
                     <div class="demo-skin">
                         <div class="rightSetting">
-                            <!-- <p>GENERAL SETTINGS</p>
-                            <ul class="setting-list list-unstyled m-t-20">
-                                <li>
-                                    <div class="form-check">
-                                        <div class="form-check m-l-10">
-                                            <label class="form-check-label">
-                                                <input class="form-check-input" type="checkbox" value="" checked> Save
-                                                History
-                                                <span class="form-check-sign">
-                                                    <span class="check"></span>
-                                                </span>
-                                            </label>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="form-check">
-                                        <div class="form-check m-l-10">
-                                            <label class="form-check-label">
-                                                <input class="form-check-input" type="checkbox" value="" checked> Show
-                                                Status
-                                                <span class="form-check-sign">
-                                                    <span class="check"></span>
-                                                </span>
-                                            </label>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="form-check">
-                                        <div class="form-check m-l-10">
-                                            <label class="form-check-label">
-                                                <input class="form-check-input" type="checkbox" value="" checked> Auto
-                                                Submit Issue
-                                                <span class="form-check-sign">
-                                                    <span class="check"></span>
-                                                </span>
-                                            </label>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="form-check">
-                                        <div class="form-check m-l-10">
-                                            <label class="form-check-label">
-                                                <input class="form-check-input" type="checkbox" value="" checked> Show
-                                                Status To All
-                                                <span class="form-check-sign">
-                                                    <span class="check"></span>
-                                                </span>
-                                            </label>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul> -->
                         </div>
                         <div class="rightSetting">
                             <p>SIDEBAR MENU COLORS</p>
-                            <button type="button"
-                                class="btn btn-sidebar-light btn-border-radius p-l-20 p-r-20">Light</button>
-                            <button type="button"
-                                class="btn btn-sidebar-dark btn-default btn-border-radius p-l-20 p-r-20">Dark</button>
+                            <button type="button" class="btn btn-sidebar-light btn-border-radius p-l-20 p-r-20">Light</button>
+                            <button type="button" class="btn btn-sidebar-dark btn-default btn-border-radius p-l-20 p-r-20">Dark</button>
                         </div>
                         <div class="rightSetting">
                             <p>THEME COLORS</p>
-                            <button type="button"
-                                class="btn btn-theme-light btn-border-radius p-l-20 p-r-20">Light</button>
-                            <button type="button"
-                                class="btn btn-theme-dark btn-default btn-border-radius p-l-20 p-r-20">Dark</button>
+                            <button type="button" class="btn btn-theme-light btn-border-radius p-l-20 p-r-20">Light</button>
+                            <button type="button" class="btn btn-theme-dark btn-default btn-border-radius p-l-20 p-r-20">Dark</button>
                         </div>
                         <div class="rightSetting">
                             <p>SKINS</p>
@@ -543,8 +325,7 @@
                             <p>Disk Space</p>
                             <div class="sidebar-progress">
                                 <div class="progress m-t-20">
-                                    <div class="progress-bar l-bg-cyan shadow-style width-per-45" role="progressbar"
-                                        aria-valuenow="45" aria-valuemin="0" aria-valuemax="100"></div>
+                                    <div class="progress-bar l-bg-cyan shadow-style width-per-45" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100"></div>
                                 </div>
                                 <span class="progress-description">
                                     <small>26% remaining</small>
@@ -555,8 +336,7 @@
                             <p>Server Load</p>
                             <div class="sidebar-progress">
                                 <div class="progress m-t-20">
-                                    <div class="progress-bar l-bg-orange shadow-style width-per-63" role="progressbar"
-                                        aria-valuenow="63" aria-valuemin="0" aria-valuemax="100"></div>
+                                    <div class="progress-bar l-bg-orange shadow-style width-per-63" role="progressbar" aria-valuenow="63" aria-valuemin="0" aria-valuemax="100"></div>
                                 </div>
                                 <span class="progress-description">
                                     <small>Highly Loaded</small>
@@ -566,358 +346,173 @@
                     </div>
                 </div>
                 <div role="tabpanel" class="tab-pane stretchRight" id="settings">
-                    <!-- <div class="demo-settings">
-                        <p>GENERAL SETTINGS</p>
-                        <ul class="setting-list">
-                            <li>
-                                <span>Report Panel Usage</span>
-                                <div class="switch">
-                                    <label>
-                                        <input type="checkbox" checked>
-                                        <span class="lever switch-col-green"></span>
-                                    </label>
-                                </div>
-                            </li>
-                            <li>
-                                <span>Email Redirect</span>
-                                <div class="switch">
-                                    <label>
-                                        <input type="checkbox">
-                                        <span class="lever switch-col-blue"></span>
-                                    </label>
-                                </div>
-                            </li>
-                        </ul>
-                        <p>SYSTEM SETTINGS</p>
-                        <ul class="setting-list">
-                            <li>
-                                <span>Notifications</span>
-                                <div class="switch">
-                                    <label>
-                                        <input type="checkbox" checked>
-                                        <span class="lever switch-col-purple"></span>
-                                    </label>
-                                </div>
-                            </li>
-                            <li>
-                                <span>Auto Updates</span>
-                                <div class="switch">
-                                    <label>
-                                        <input type="checkbox" checked>
-                                        <span class="lever switch-col-cyan"></span>
-                                    </label>
-                                </div>
-                            </li>
-                        </ul>
-                        <p>ACCOUNT SETTINGS</p>
-                        <ul class="setting-list">
-                            <li>
-                                <span>Offline</span>
-                                <div class="switch">
-                                    <label>
-                                        <input type="checkbox" checked>
-                                        <span class="lever switch-col-red"></span>
-                                    </label>
-                                </div>
-                            </li>
-                            <li>
-                                <span>Location Permission</span>
-                                <div class="switch">
-                                    <label>
-                                        <input type="checkbox">
-                                        <span class="lever switch-col-lime"></span>
-                                    </label>
-                                </div>
-                            </li>
-                        </ul>
-                    </div> -->
                 </div>
             </div>
         </aside>
         <!-- #END# Right Sidebar -->
-    </div>
-    <section class="content">
-        <div class="container-fluid">
-            <div class="block-header">
-                <div class="row">
-                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                        <ul class="breadcrumb breadcrumb-style ">
-                            <li class="breadcrumb-item">
-                                <h4 class="page-title">Echart</h4>
-                            </li>
-                            <li class="breadcrumb-item bcrumb-1">
-                                <a href="../../index-2.html">
-                                    <i class="fas fa-home"></i> Home</a>
-                            </li>
-                            <li class="breadcrumb-item bcrumb-2">
-                                <a href="#" onClick="return false;">Charts</a>
-                            </li>
-                            <li class="breadcrumb-item active">Echart</li>
-                        </ul>
+        <section class="content">
+            <div class="container-fluid">
+                <div class="block-header">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <ul class="breadcrumb breadcrumb-style ">
+                                <li class="breadcrumb-item">
+                                    <h4 class="page-title">Echart</h4>
+                                </li>
+                                <li class="breadcrumb-item bcrumb-1">
+                                    <a href="../../index-2.html">
+                                        <i class="fas fa-home"></i> الصفحة الرئيسية</a>
+                                </li>
+                                <li class="breadcrumb-item bcrumb-2">
+                                    <a href="#" onClick="return false;">الرسوم </a>
+                                </li>
+                                <li class="breadcrumb-item active">الرسوم البيانية</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
+                <div class="row clearfix">
+                    <!-- -->
+                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                        <div class="card">
+                            <div class="header">
+                                {!! $chart->container() !!}
+                            </div>
+                            <div class="body">
+                                <div >
+                                <script src="{{ LarapexChart::cdn() }}"></script>
+                                    {{ $chart->script() }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- -->
+                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                        <div class="card">
+                            <div class="header">
+                                {!! $chart1->container() !!}
+                            </div>
+                            <div class="body">
+                                <div>
+                                <script src="{{ LarapexChart::cdn() }}"></script>
+                                {{ $chart1->script() }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- -->
+                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                        <div class="card">
+                            <div class="header">
+                                {!! $chart2->container() !!}
+                            </div>
+                            <div class="body">
+                                <div>
+                                <script src="{{ LarapexChart::cdn() }}"></script>
+                                {{ $chart2->script() }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- -->
+                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                        <div class="card">
+                            <div class="header">
+                                {!! $chart3->container() !!}
+                            </div>
+                            <div class="body">
+                                <div>
+                                <script src="{{ LarapexChart::cdn() }}"></script>
+                                {{ $chart3->script() }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- -->
+                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                        <div class="card">
+                            <div class="header">
+                                {!! $chart4->container() !!}
+                            </div>
+                            <div class="body">
+                                <div>
+                                <script src="{{ LarapexChart::cdn() }}"></script>
+                                {{ $chart4->script() }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- -->
+                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                        <div class="card">
+                            <div class="header">
+                                {!! $chart5->container() !!}
+                            </div>
+                            <div class="body">
+                                <div>
+                                <script src="{{ LarapexChart::cdn() }}"></script>
+                                {{ $chart5->script() }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- -->
+                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                        <div class="card">
+                            <div class="header">
+                                {!! $chart6->container() !!}
+                            </div>
+                            <div class="body">
+                                <div>
+                                <script src="{{ LarapexChart::cdn() }}"></script>
+                                {{ $chart6->script() }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- -->
+                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                        <div class="card">
+                            <div class="header">
+                                {!! $chart7->container() !!}
+                            </div>
+                            <div class="body">
+                                <div>
+                                <script src="{{ LarapexChart::cdn() }}"></script>
+                                {{ $chart7->script() }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- -->
+                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                        <div class="card">
+                            <div class="header">
+                                {!! $chart8->container() !!}
+                            </div>
+                            <div class="body">
+                                <div>
+                                <script src="{{ LarapexChart::cdn() }}"></script>
+                                {{ $chart8->script() }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
-            <div class="row clearfix">
-                <!-- Bar chart with line -->
-                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
-                    <div class="card">
-                        <div class="header">
-                            <h2>Bar chart with line</h2>
-                            <ul class="header-dropdown m-r--5">
-                                <li class="dropdown">
-                                    <a href="#" onClick="return false;" class="dropdown-toggle" data-toggle="dropdown"
-                                        role="button" aria-haspopup="true" aria-expanded="false">
-                                        <i class="material-icons">more_vert</i>
-                                    </a>
-                                    <ul class="dropdown-menu pull-right">
-                                        <li>
-                                            <a href="#" onClick="return false;">Action</a>
-                                        </li>
-                                        <li>
-                                            <a href="#" onClick="return false;">Another action</a>
-                                        </li>
-                                        <li>
-                                            <a href="#" onClick="return false;">Something else here</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="body">
-                            <div id="echart_bar_line" class="chartsh"></div>
-                        </div>
-                    </div>
-                </div>
-                <!-- line chart -->
-                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
-                    <div class="card">
-                        <div class="header">
-                            <h2>Line Chart</h2>
-                            <ul class="header-dropdown m-r--5">
-                                <li class="dropdown">
-                                    <a href="#" onClick="return false;" class="dropdown-toggle" data-toggle="dropdown"
-                                        role="button" aria-haspopup="true" aria-expanded="false">
-                                        <i class="material-icons">more_vert</i>
-                                    </a>
-                                    <ul class="dropdown-menu pull-right">
-                                        <li>
-                                            <a href="#" onClick="return false;">Action</a>
-                                        </li>
-                                        <li>
-                                            <a href="#" onClick="return false;">Another action</a>
-                                        </li>
-                                        <li>
-                                            <a href="#" onClick="return false;">Something else here</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="body">
-                            <div id="echart_line" class="chartsh"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row clearfix">
-                <!-- Bar chart -->
-                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
-                    <div class="card">
-                        <div class="header">
-                            <h2>Bar chart with line</h2>
-                            <ul class="header-dropdown m-r--5">
-                                <li class="dropdown">
-                                    <a href="#" onClick="return false;" class="dropdown-toggle" data-toggle="dropdown"
-                                        role="button" aria-haspopup="true" aria-expanded="false">
-                                        <i class="material-icons">more_vert</i>
-                                    </a>
-                                    <ul class="dropdown-menu pull-right">
-                                        <li>
-                                            <a href="#" onClick="return false;">Action</a>
-                                        </li>
-                                        <li>
-                                            <a href="#" onClick="return false;">Another action</a>
-                                        </li>
-                                        <li>
-                                            <a href="#" onClick="return false;">Something else here</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="body">
-                            <div id="echart_bar" class="chartsh"></div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Graph Line Chart -->
-                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
-                    <div class="card">
-                        <div class="header">
-                            <h2>Graph Line Chart</h2>
-                            <ul class="header-dropdown m-r--5">
-                                <li class="dropdown">
-                                    <a href="#" onClick="return false;" class="dropdown-toggle" data-toggle="dropdown"
-                                        role="button" aria-haspopup="true" aria-expanded="false">
-                                        <i class="material-icons">more_vert</i>
-                                    </a>
-                                    <ul class="dropdown-menu pull-right">
-                                        <li>
-                                            <a href="#" onClick="return false;">Action</a>
-                                        </li>
-                                        <li>
-                                            <a href="#" onClick="return false;">Another action</a>
-                                        </li>
-                                        <li>
-                                            <a href="#" onClick="return false;">Something else here</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="body">
-                            <div id="echart_graph_line" class="chartsh"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row clearfix">
-                <!-- Pie Chart -->
-                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
-                    <div class="card">
-                        <div class="header">
-                            <h2>Pie Chart</h2>
-                            <ul class="header-dropdown m-r--5">
-                                <li class="dropdown">
-                                    <a href="#" onClick="return false;" class="dropdown-toggle" data-toggle="dropdown"
-                                        role="button" aria-haspopup="true" aria-expanded="false">
-                                        <i class="material-icons">more_vert</i>
-                                    </a>
-                                    <ul class="dropdown-menu pull-right">
-                                        <li>
-                                            <a href="#" onClick="return false;">Action</a>
-                                        </li>
-                                        <li>
-                                            <a href="#" onClick="return false;">Another action</a>
-                                        </li>
-                                        <li>
-                                            <a href="#" onClick="return false;">Something else here</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="body">
-                            <div id="echart_pie" class="chartsh"></div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Line Graph Chart -->
-                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
-                    <div class="card">
-                        <div class="header">
-                            <h2>Aria Line Chart</h2>
-                            <ul class="header-dropdown m-r--5">
-                                <li class="dropdown">
-                                    <a href="#" onClick="return false;" class="dropdown-toggle" data-toggle="dropdown"
-                                        role="button" aria-haspopup="true" aria-expanded="false">
-                                        <i class="material-icons">more_vert</i>
-                                    </a>
-                                    <ul class="dropdown-menu pull-right">
-                                        <li>
-                                            <a href="#" onClick="return false;">Action</a>
-                                        </li>
-                                        <li>
-                                            <a href="#" onClick="return false;">Another action</a>
-                                        </li>
-                                        <li>
-                                            <a href="#" onClick="return false;">Something else here</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="body">
-                            <div id="echart_area_line" class="chartsh"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row clearfix">
-                <!-- Sonar Chart -->
-                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
-                    <div class="card">
-                        <div class="header">
-                            <h2>Sonar Chart</h2>
-                            <ul class="header-dropdown m-r--5">
-                                <li class="dropdown">
-                                    <a href="#" onClick="return false;" class="dropdown-toggle" data-toggle="dropdown"
-                                        role="button" aria-haspopup="true" aria-expanded="false">
-                                        <i class="material-icons">more_vert</i>
-                                    </a>
-                                    <ul class="dropdown-menu pull-right">
-                                        <li>
-                                            <a href="#" onClick="return false;">Action</a>
-                                        </li>
-                                        <li>
-                                            <a href="#" onClick="return false;">Another action</a>
-                                        </li>
-                                        <li>
-                                            <a href="#" onClick="return false;">Something else here</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="body">
-                            <div id="echart_sonar" class="chartsh"></div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Donut Chart -->
-                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
-                    <div class="card">
-                        <div class="header">
-                            <h2>Donut Chart</h2>
-                            <ul class="header-dropdown m-r--5">
-                                <li class="dropdown">
-                                    <a href="#" onClick="return false;" class="dropdown-toggle" data-toggle="dropdown"
-                                        role="button" aria-haspopup="true" aria-expanded="false">
-                                        <i class="material-icons">more_vert</i>
-                                    </a>
-                                    <ul class="dropdown-menu pull-right">
-                                        <li>
-                                            <a href="#" onClick="return false;">Action</a>
-                                        </li>
-                                        <li>
-                                            <a href="#" onClick="return false;">Another action</a>
-                                        </li>
-                                        <li>
-                                            <a href="#" onClick="return false;">Something else here</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="body">
-                            <div id="echart_donut" class="chartsh"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Plugins Js -->
-    <script src="{{asset('assets/js/app.min.js')}}"></script>
-    <script src="{{asset('assets/js/chart.min.js')}}"></script>
-    <!-- Echart Js -->
-    <script src="{{asset('assets/js/bundles/echart/echarts.js')}}"></script>
-    <script src="{{asset('assets/js/pages/charts/echarts.js')}}"></script>
-    <!-- Custom Js -->
-    <script src="{{asset('assets/js/admin.js')}}"></script>
+        </section>
+
+
+
+        <!-- Plugins Js -->
+        <script src="{{asset('assets/js/app.min.js')}}"></script>
+        <script src="{{asset('assets/js/chart.min.js')}}"></script>
+        <!-- Echart Js -->
+        <script src="{{asset('assets/js/bundles/echart/echarts.js')}}"></script>
+        <script src="{{asset('assets/js/pages/charts/echarts.js')}}"></script>
+        <!-- Custom Js -->
+        <script src="{{asset('assets/js/admin.js')}}"></script>
 </body>
-
-
 
 </html>

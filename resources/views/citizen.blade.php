@@ -109,7 +109,7 @@
                         </center>
                         <form id="wizard_with_validation" method="post" action="/citizen">
                             @csrf
-                            <input type="submit" class="btn btn-scusess" value="حفظ البيانات">
+                             
                             <h3>لمحه عامه</h3>
                             <fieldset>
 
@@ -1002,7 +1002,7 @@
                                                         <option {{ (old('city') =='ذكر')? "selected" : '' }}>ذكر</option>
                                                         <option {{ (old('city') =='انثى')? "selected" : '' }}>انثى</option>
                                                     </select></td>
-                                                <td><input type="number" class="" name="age"></td>
+                                                <td><input type="number" class="" name="ages"></td>
                                                 <td><select class="" data-placeholder="Select" name="Death_certificate">
                                                         <option {{ (old('city') =='لا يوجد')? "selected" : '' }}>لا يوجد</option>
                                                         <option {{ (old('city') =='تدريب مهني/تقني قصير في موقع العمل')? "selected" : '' }}>تدريب مهني/تقني قصير في موقع العمل</option>
@@ -1046,13 +1046,16 @@
                                     </table>
                                 </div>
                             </fieldset>
+                            <input type="submit" class="btn btn-scusess" value="حفظ البيانات">
                         </form>
                     </div>
+                    
                 </div>
             </div>
         </div>
         </div>
     </section>
+    
     <script src="{{asset('assets/js/app.min.js')}}"></script>
     <script src="{{asset('assets/js/form.min.js')}}"></script>
     <!-- befor

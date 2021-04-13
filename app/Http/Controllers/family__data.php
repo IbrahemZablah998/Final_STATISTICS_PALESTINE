@@ -266,7 +266,7 @@ class family__data extends Controller
             'Full_name_dead' => 'required',
             'gender' => 'required',
             'relationship' => 'required',
-            'age' => 'required',
+            'ages' => 'required',
             'Death_certificate' => 'required',
             'marriage_status' => 'required',
             'pregnant_at_time_of_death' => 'required',
@@ -280,7 +280,7 @@ class family__data extends Controller
         $store_housing_data_dead->house_id = $find_housing_datas->Family_number_in_the_building;
         $store_housing_data_dead->gender = $field_housing_data_dead['gender'];
         $store_housing_data_dead->relationship = $field_housing_data_dead['relationship'];
-        $store_housing_data_dead->age = $field_housing_data_dead['age'];
+        $store_housing_data_dead->ages = $field_housing_data_dead['ages'];
         $store_housing_data_dead->Death_certificate = $field_housing_data_dead['Death_certificate'];
         $store_housing_data_dead->marriage_status = $field_housing_data_dead['marriage_status'];
         $store_housing_data_dead->pregnant_at_time_of_death = $field_housing_data_dead['pregnant_at_time_of_death'];
@@ -304,4 +304,6 @@ class family__data extends Controller
         );
         return view('citizen')->with($data);
     }
+
+    
 }
