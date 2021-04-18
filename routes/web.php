@@ -1,60 +1,51 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use ArielMejiaDev\LarapexCharts\LarapexChart;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
+// the home page to login
 Route::get('/', function () {
-    return view('login');
+    return view('Auth.login');
 });
-// register
-// Route::get('login', "LoginController@login");
-Route::get('login', [ 'as' => 'login', 'uses' => 'LoginController@login']);
-Route::post('login/checklogin', "LoginController@checkLogin");
 
+// route register
 Route::get('/register', "LoginController@register");
 Route::post('/register/checkRegister', "LoginController@checkRegister");
 
+// route email
 Route::get('/email', "LoginController@email");
 Route::post('/email/checkEmail', "LoginController@checkEmail");
-
 Route::get('/confirmation', function () {
-    return view('confirmation');
+    return view('Auth.confirmation');
 });
 
+// route login
+Route::get('login', [ 'as' => 'login', 'uses' => 'LoginController@login']);
+Route::post('login/checklogin', "LoginController@checkLogin");
+
+// route logout
 Route::get('logout', 'LoginController@logout');
 
-// fill data
-Route::get('/citizen', "family__data@index");
-Route::post('/citizen', "family__data@store");
+// route fill data citizen
+Route::get('/citizen', "familyController@index");
+Route::post('/citizen', "familyController@store");
 
-Route::get('/charts1', "charts1@index");
-
+// route charts
+Route::get('/charts1', "charts1Controller@index");
 Route::get('/charts2', function () {
-    return view('charts2');
+    return view('Charts.charts2');
+});
+Route::get('/floatChart', function () {
+    return view('Charts.floatChart');
+});
+
+// route Tables
+Route::get('/gropTable', function () {
+    return view('Tables.gropTable');
+});
+Route::get('/exportedTable', function () {
+    return view('Tables.exportedTable');
 });
 
 Route::get('/index1', function () {
     return view('index1');
-});
-Route::get('/gropTable', function () {
-    return view('gropTable');
-});
-
-Route::get('/exportedTable', function () {
-    return view('exportedTable');
-});
-
-Route::get('/floatChart', function () {
-    return view('floatChart');
 });

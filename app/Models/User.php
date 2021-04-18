@@ -1,8 +1,7 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
@@ -56,7 +55,7 @@ class User extends Authenticatable
 
     public function family__data_marriages()
     {
-        return $this->hasMany(family__data_marriages::class);
+        return $this->hasMany(amily__data_marriages::class);
     }
 
     public function housing_datas()

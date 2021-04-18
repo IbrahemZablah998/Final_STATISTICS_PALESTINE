@@ -1,15 +1,14 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class family__data_marriages extends Model
+class housing_datas extends Model
 {
     protected $guarded = [];
 
-    public function user()
-    {
+    public function user () {
         return $this->belongsTo(User::class);
     }
 }

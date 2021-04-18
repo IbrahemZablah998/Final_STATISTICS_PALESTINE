@@ -112,7 +112,7 @@
                         </center>
                         <form id="wizard_with_validation" method="post" action="/citizen">
                             @csrf
-                             
+
                             <h3>لمحه عامه</h3>
                             <fieldset>
 
@@ -142,10 +142,8 @@
 
                             <h3>بيانات افراد الاسرة</h3>
                             <fieldset>
-
                                 <button onclick="myCreateFunction()">Create row</button>
                                 <button onclick="myDeleteFunction()">Delete row</button>
-
                                 <div class="body table-responsive">
                                     <table class="table table-bordered" style="overflow-x: scroll !important;min-width:300% !important;">
                                         <thead>
@@ -161,7 +159,6 @@
                                                 <th class="text-center" style="width:4%">مكان الاقامه المعتاده الحاليه</th>
                                                 <th class="text-center" style="width:5%">مده الاقامه في مكان الاقامه الحاليه المعتاده بالسنوات الكامله</th>
                                                 <th class="text-center" style="width:5%">مكان الاقامه المعتاده السابقه للحاليه(ان وجدت)</th>
-                                                <!-- <th class="text-center" style="width:5%">رقم الاسرة في المبنى</th> -->
                                                 <th class="text-center" style="width:10%">سبب تغيير مكان الاقامه السابق</th>
                                                 <th class="text-center" style="width:4%">الديانه</th>
                                                 <th class="text-center" style="width:7%">حاله اللجوء</th>
@@ -177,103 +174,98 @@
                                                 <td><input type="text" class="" name="FullName" value="{{ $id->name ?? ''}}"></td>
                                                 <td><select class="" data-placeholder="Select" name="relationship">
                                                         <!-- <option disabled selected>16-المصدر الرئيسي للطاقه المستخدمة في التدفئة</option> -->
-                                                        <option {{ ((($ff->relationShip ?? '') == 'اخ/اخت')? "selected" : '' )}}>اخ/اخت</option>
-                                                        <option {{ ((($ff->relationShip ?? '') == 'ابن/ابنه')? "selected" : '' )}}>ابن/ابنه</option>
-                                                        <option {{ ((($ff->relationShip ?? '') == 'زوجه/زوج')? "selected" : '' )}}>زوجه/زوج</option>
-                                                        <option {{ ((($ff->relationShip ?? '') == 'جد/جده')? "selected" : '' )}}>جد/جده</option>
-                                                        <option {{ ((($ff->relationShip ?? '') == 'حفيد/حفيده')? "selected" : '' )}}>حفيد/حفيده</option>
-                                                        <option {{ ((($ff->relationShip ?? '') == 'زوج ابن/زوج بنت')? "selected" : '' )}}>زوج ابن/زوج بنت</option>
-                                                        <option {{ ((($ff->relationShip ?? '') == 'اقرباء اخرون')? "selected" : '' )}}>اقرباء اخرون</option>
-                                                        <option {{ ((($ff->relationShip ?? '') == 'اخرون')? "selected" : '' )}}>اخرون</option>
-                                                        <option {{ ((($ff->relationShip ?? '') == 'رب الاسره')? "selected" : '')}}>رب الاسره</option>
+                                                        <option {{ ((($family->relationShip ?? '') == 'اخ/اخت')? "selected" : '' )}}>اخ/اخت</option>
+                                                        <option {{ ((($family->relationShip ?? '') == 'ابن/ابنه')? "selected" : '' )}}>ابن/ابنه</option>
+                                                        <option {{ ((($family->relationShip ?? '') == 'زوجه/زوج')? "selected" : '' )}}>زوجه/زوج</option>
+                                                        <option {{ ((($family->relationShip ?? '') == 'جد/جده')? "selected" : '' )}}>جد/جده</option>
+                                                        <option {{ ((($family->relationShip ?? '') == 'حفيد/حفيده')? "selected" : '' )}}>حفيد/حفيده</option>
+                                                        <option {{ ((($family->relationShip ?? '') == 'زوج ابن/زوج بنت')? "selected" : '' )}}>زوج ابن/زوج بنت</option>
+                                                        <option {{ ((($family->relationShip ?? '') == 'اقرباء اخرون')? "selected" : '' )}}>اقرباء اخرون</option>
+                                                        <option {{ ((($family->relationShip ?? '') == 'اخرون')? "selected" : '' )}}>اخرون</option>
+                                                        <option {{ ((($family->relationShip ?? '') == 'رب الاسره')? "selected" : '')}}>رب الاسره</option>
                                                     </select>
                                                 </td>
                                                 <td><select class="" data-placeholder="Select" name="gender">
                                                         <!-- <option disabled selected>16-المصدر الرئيسي للطاقه المستخدمة في التدفئة</option> -->
-                                                        <option {{ ((($ff->gender??  '')=='ذكر')? "selected" : '' )}}>ذكر</option>
-                                                        <option {{ ((($ff->gender??  '')=='انثى')? "selected" : '')}}>انثى</option>
+                                                        <option {{ ((($family->gender??  '')=='ذكر')? "selected" : '' )}}>ذكر</option>
+                                                        <option {{ ((($family->gender??  '')=='انثى')? "selected" : '')}}>انثى</option>
 
                                                     </select>
                                                 </td>
-                                                <td><input type="number" class="" name="age" value="{{$ff->age ?? ''}}"></td>
-                                                <td><input type="text" class="" name="nationality" value="{{$ff->nationality ?? ''}}"></td>
+                                                <td><input type="number" class="" name="age" value="{{$family->age ?? ''}}"></td>
+                                                <td><input type="text" class="" name="nationality" value="{{$family->nationality ?? ''}}"></td>
                                                 <td><input type="number" class="" name="id" value="{{ $id->id  ?? ''}}"></td>
-                                                <td><input type="text" class="" name="placeOfMotherTimeInvidualBirth" value="{{$ff->placeOfMotherTimeInvidualBirth ?? ''}}"></td>
+                                                <td><input type="text" class="" name="placeOfMotherTimeInvidualBirth" value="{{$family->placeOfMotherTimeInvidualBirth ?? ''}}"></td>
                                                 <td><input type="text" class="" name="place" value="{{ $id->place  ?? ''}}"></td>
-                                                <td><input type="number" class="" name="periodAt_theCurrent_residenceIn_fullTime" value="{{$ff->periodAt_theCurrent_residenceIn_fullTime ?? ''}}"></td>
-                                                <td><input type="text" class="" name="previous_place" value="{{$ff->previous_place ?? ''}}"></td>
-                                                <!-- <td><input type="number" class="" name="Family_number_in_the_buildingg" value="{{$ff->Family_number_in_the_building ?? ''}}"></td> -->
+                                                <td><input type="number" class="" name="periodAt_theCurrent_residenceIn_fullTime" value="{{$family->periodAt_theCurrent_residenceIn_fullTime ?? ''}}"></td>
+                                                <td><input type="text" class="" name="previous_place" value="{{$family->previous_place ?? ''}}"></td>
 
                                                 <td><select class="" data-placeholder="Select" name="reason_change_residence">
                                                         <!-- <option disabled selected>16-المصدر الرئيسي للطاقه المستخدمة في التدفئة</option> -->
-                                                        <option {{ ((($ff->reason_change_residence??  '' )=='العمل')? "selected" : '' )}}>العمل</option>
-                                                        <option {{ ((($ff->reason_change_residence??  '' )=='الدراسه')? "selected" : '' )}}>الدراسه</option>
-                                                        <option {{ ((($ff->reason_change_residence??  '' )=='الزواج')? "selected" : '' )}}>الزواج</option>
-                                                        <option {{ ((($ff->reason_change_residence??  '' )=='المرافقه')? "selected" : '' )}}>المرافقه</option>
-                                                        <option {{ ((($ff->reason_change_residence??  '' )=='التهجير')? "selected" : '' )}}>التهجير</option>
-                                                        <option {{ ((($ff->reason_change_residence??  '' )=='العوده')? "selected" : '' )}}>العوده</option>
-                                                        <option {{ ((($ff->reason_change_residence??  '' )=='الجدار')? "selected" : '' )}}>الجدار</option>
-                                                        <option {{ ((($ff->reason_change_residence??  '' )=='الحفاظ على الهويه المقدسه')? "selected" : '' )}}>الحفاظ على الهويه المقدسه</option>
-                                                        <option {{ ((($ff->reason_change_residence??  '' )=='اخرى')? "selected" : '' )}}>اخرى</option>
-                                                        <option {{ ((($ff->reason_change_residence??  '' )=='اجراءات اسرائيليه')? "selected" : '' )}}>اجراءات اسرائيليه</option>
+                                                        <option {{ ((($family->reason_change_residence??  '' )=='العمل')? "selected" : '' )}}>العمل</option>
+                                                        <option {{ ((($family->reason_change_residence??  '' )=='الدراسه')? "selected" : '' )}}>الدراسه</option>
+                                                        <option {{ ((($family->reason_change_residence??  '' )=='الزواج')? "selected" : '' )}}>الزواج</option>
+                                                        <option {{ ((($family->reason_change_residence??  '' )=='المرافقه')? "selected" : '' )}}>المرافقه</option>
+                                                        <option {{ ((($family->reason_change_residence??  '' )=='التهجير')? "selected" : '' )}}>التهجير</option>
+                                                        <option {{ ((($family->reason_change_residence??  '' )=='العوده')? "selected" : '' )}}>العوده</option>
+                                                        <option {{ ((($family->reason_change_residence??  '' )=='الجدار')? "selected" : '' )}}>الجدار</option>
+                                                        <option {{ ((($family->reason_change_residence??  '' )=='الحفاظ على الهويه المقدسه')? "selected" : '' )}}>الحفاظ على الهويه المقدسه</option>
+                                                        <option {{ ((($family->reason_change_residence??  '' )=='اخرى')? "selected" : '' )}}>اخرى</option>
+                                                        <option {{ ((($family->reason_change_residence??  '' )=='اجراءات اسرائيليه')? "selected" : '' )}}>اجراءات اسرائيليه</option>
 
                                                     </select>
                                                 </td>
 
                                                 <td><select class="" data-placeholder="Select" name="religion">
                                                         <!-- <option disabled selected>16-المصدر الرئيسي للطاقه المستخدمة في التدفئة</option> -->
-                                                        <option {{ ((($ff->religion??  '' )=='مسيحي')? "selected" : '')}}>مسيحي</option>
-                                                        <option {{ ((($ff->religion??  '' )=='مسلم')? "selected" : '' )}}>مسلم</option>
-                                                        <option {{ ((($ff->religion??  '' )=='اخرى')? "selected" : '' )}}>اخرى</option>
+                                                        <option {{ ((($family->religion??  '' )=='مسيحي')? "selected" : '')}}>مسيحي</option>
+                                                        <option {{ ((($family->religion??  '' )=='مسلم')? "selected" : '' )}}>مسلم</option>
+                                                        <option {{ ((($family->religion??  '' )=='اخرى')? "selected" : '' )}}>اخرى</option>
 
                                                     </select>
                                                 </td>
 
                                                 <td><select class="" data-placeholder="Select" name="asylum_status">
                                                         <!-- <option disabled selected>16-المصدر الرئيسي للطاقه المستخدمة في التدفئة</option> -->
-                                                        <option {{ ((($ff->asylum_status??  '' )=='لاجئ مسجل')?     "selected" : '' )}}>لاجئ مسجل</option>
-                                                        <option {{ ((($ff->asylum_status??  '' )=='لاجئ غير مسجل')? "selected" : '' )}}>لاجئ غير مسجل</option>
-                                                        <option {{ ((($ff->asylum_status??  '' )=='ليس لاجئا')?     "selected" : '' )}}>ليس لاجئا</option>
+                                                        <option {{ ((($family->asylum_status??  '' )=='لاجئ مسجل')?     "selected" : '' )}}>لاجئ مسجل</option>
+                                                        <option {{ ((($family->asylum_status??  '' )=='لاجئ غير مسجل')? "selected" : '' )}}>لاجئ غير مسجل</option>
+                                                        <option {{ ((($family->asylum_status??  '' )=='ليس لاجئا')?     "selected" : '' )}}>ليس لاجئا</option>
 
                                                     </select>
                                                 </td>
 
                                                 <td><select class="" data-placeholder="Select" name="healthy_condition_difficulties">
                                                         <!-- <option disabled selected>16-المصدر الرئيسي للطاقه المستخدمة في التدفئة</option> -->
-                                                        <option {{ ((($ff->healthy_condition_difficulties??  '' )=='لا يوجد')?             "selected" : '' )}}>لا يوجد</option>
-                                                        <option {{ ((($ff->healthy_condition_difficulties??  '' )=='نعم, بعض الصعوبه')?  "selected" : '' )}}>نعم, بعض الصعوبه</option>
-                                                        <option {{ ((($ff->healthy_condition_difficulties??  '' )=='نعم,صعوبه كبيره')?   "selected" : '' )}}>نعم,صعوبه كبيره</option>
-                                                        <option {{ ((($ff->healthy_condition_difficulties??  '' )=='لا يستطيع مطلقا')?    "selected" : '' )}}>لا يستطيع مطلقا</option>
+                                                        <option {{ ((($family->healthy_condition_difficulties??  '' )=='لا يوجد')?             "selected" : '' )}}>لا يوجد</option>
+                                                        <option {{ ((($family->healthy_condition_difficulties??  '' )=='نعم, بعض الصعوبه')?  "selected" : '' )}}>نعم, بعض الصعوبه</option>
+                                                        <option {{ ((($family->healthy_condition_difficulties??  '' )=='نعم,صعوبه كبيره')?   "selected" : '' )}}>نعم,صعوبه كبيره</option>
+                                                        <option {{ ((($family->healthy_condition_difficulties??  '' )=='لا يستطيع مطلقا')?    "selected" : '' )}}>لا يستطيع مطلقا</option>
                                                     </select>
                                                 </td>
 
                                                 <td><select class="" data-placeholder="Select" name="health_insurance">
                                                         <!-- <option disabled selected>16-المصدر الرئيسي للطاقه المستخدمة في التدفئة</option> -->
-                                                        <option {{ ((($ff->health_insurance??  '' )=='لا يوجد')? "selected" : '' )}}>لا يوجد</option>
-                                                        <option {{ ((($ff->health_insurance??  '' )=='حكومي فقط')? "selected" : '' )}}>حكومي فقط</option>
-                                                        <option {{ ((($ff->health_insurance??  '' )=='وكاله فقط')? "selected" : '' )}}>وكاله فقط</option>
-                                                        <option {{ ((($ff->health_insurance??  '' )=='خاص فقط')? "selected" : '' )}}>خاص فقط</option>
-                                                        <option {{ ((($ff->health_insurance??  '' )=='حكومي و وكاله')? "selected" : '' )}}>حكومي و وكاله</option>
-                                                        <option {{ ((($ff->health_insurance??  '' )=='حكومي و خاص')? "selected" : '' )}}>حكومي و خاص</option>
-                                                        <option {{ ((($ff->health_insurance??  '' )=='وكاله وخاص')? "selected" : '' )}}>وكاله وخاص</option>
-                                                        <option {{ ((($ff->health_insurance??  '' )=='اسرائيلي')? "selected" : '' )}}>اسرائيلي</option>
-                                                        <option {{ ((($ff->health_insurance??  '' )=='اخرى')? "selected" : '' )}}>اخرى</option>
+                                                        <option {{ ((($family->health_insurance??  '' )=='لا يوجد')? "selected" : '' )}}>لا يوجد</option>
+                                                        <option {{ ((($family->health_insurance??  '' )=='حكومي فقط')? "selected" : '' )}}>حكومي فقط</option>
+                                                        <option {{ ((($family->health_insurance??  '' )=='وكاله فقط')? "selected" : '' )}}>وكاله فقط</option>
+                                                        <option {{ ((($family->health_insurance??  '' )=='خاص فقط')? "selected" : '' )}}>خاص فقط</option>
+                                                        <option {{ ((($family->health_insurance??  '' )=='حكومي و وكاله')? "selected" : '' )}}>حكومي و وكاله</option>
+                                                        <option {{ ((($family->health_insurance??  '' )=='حكومي و خاص')? "selected" : '' )}}>حكومي و خاص</option>
+                                                        <option {{ ((($family->health_insurance??  '' )=='وكاله وخاص')? "selected" : '' )}}>وكاله وخاص</option>
+                                                        <option {{ ((($family->health_insurance??  '' )=='اسرائيلي')? "selected" : '' )}}>اسرائيلي</option>
+                                                        <option {{ ((($family->health_insurance??  '' )=='اخرى')? "selected" : '' )}}>اخرى</option>
 
                                                     </select>
                                                 </td>
-
                                                 <td><select class="" data-placeholder="Select" name="disease">
                                                         <!-- <option disabled selected>16-المصدر الرئيسي للطاقه المستخدمة في التدفئة</option> -->
-                                                        <option {{ ((($ff->disease ?? '' )=='نعم')? "selected" : '' )}}>نعم</option>
-                                                        <option {{ ((($ff->disease ?? '' )=='لا')? "selected" : '' )}}>لا</option>
+                                                        <option {{ ((($family->disease ?? '' )=='نعم')? "selected" : '' )}}>نعم</option>
+                                                        <option {{ ((($family->disease ?? '' )=='لا')? "selected" : '' )}}>لا</option>
 
 
                                                     </select>
                                                 </td>
-
-
                                             </tr>
-
                                         </tbody>
                                     </table>
                                 </div>
@@ -337,53 +329,53 @@
                                                 <th scope="row">1</th>
 
                                                 <td><select class="" data-placeholder="Select" name="enroll_education">
-                                                        <option {{ ((($ffL->enroll_education ?? '' )=='ملتحق برياض اطفال')? "selected" : '' )}}>ملتحق برياض اطفال</option>
-                                                        <option {{ ((($ffL->enroll_education ?? '' )=='ملتحق حاليا')? "selected" : '' )}}>ملتحق حاليا</option>
-                                                        <option {{ ((($ffL->enroll_education ?? '' )=='التحق وترك')? "selected" : '' )}}>التحق وترك</option>
-                                                        <option {{ ((($ffL->enroll_education ?? '' )=='التحق وتخرج')? "selected" : '' )}}>التحق وتخرج</option>
-                                                        <option {{ ((($ffL->enroll_education ?? '' )=='لم يلتحق ابدا')? "selected" : '' )}}>لم يلتحق ابدا</option>
+                                                        <option {{ ((($family_learnings->enroll_education ?? '' )=='ملتحق برياض اطفال')? "selected" : '' )}}>ملتحق برياض اطفال</option>
+                                                        <option {{ ((($family_learnings->enroll_education ?? '' )=='ملتحق حاليا')? "selected" : '' )}}>ملتحق حاليا</option>
+                                                        <option {{ ((($family_learnings->enroll_education ?? '' )=='التحق وترك')? "selected" : '' )}}>التحق وترك</option>
+                                                        <option {{ ((($family_learnings->enroll_education ?? '' )=='التحق وتخرج')? "selected" : '' )}}>التحق وتخرج</option>
+                                                        <option {{ ((($family_learnings->enroll_education ?? '' )=='لم يلتحق ابدا')? "selected" : '' )}}>لم يلتحق ابدا</option>
 
                                                     </select>
                                                 </td>
-                                                <td><input type="number" class="" name="number_of_years_schooling" value="{{ $ffL->number_of_years_schooling ?? ''}}">
+                                                <td><input type="number" class="" name="number_of_years_schooling" value="{{ $family_learnings->number_of_years_schooling ?? ''}}">
                                                 </td>
                                                 <td><select class="" data-placeholder="Select" name="educational_major">
 
-                                                        <option {{ ((($ffL->educational_major ?? '' )=='امي')? "selected" : '' )}}>امي</option>
-                                                        <option {{ ((($ffL->educational_major ?? '' )=='ملم')? "selected" : '' )}}>ملم</option>
-                                                        <option {{ ((($ffL->educational_major ?? '' )=='ابتدائي')? "selected" : '' )}}>ابتدائي</option>
-                                                        <option {{ ((($ffL->educational_major ?? '' )=='اعدادي')? "selected" : '' )}}>اعدادي</option>
-                                                        <option {{ ((($ffL->educational_major ?? '' )=='ثانوي')? "selected" : '' )}}>ثانوي</option>
-                                                        <option {{ ((($ffL->educational_major ?? '' )=='دبلوم متوسط')? "selected" : '' )}}>دبلوم متوسط</option>
-                                                        <option {{ ((($ffL->educational_major ?? '' )=='بكالوريوس')? "selected" : '' )}}>بكالوريوس</option>
-                                                        <option {{ ((($ffL->educational_major ?? '' )=='دبلوم عالي')? "selected" : '' )}}>دبلوم عالي</option>
-                                                        <option {{ ((($ffL->educational_major ?? '' )=='ماجستير')? "selected" : '' )}}>ماجستير </option>
-                                                        <option {{ ((($ffL->educational_major ?? '' )=='دكتوراة')? "selected" : '' )}}>دكتوراة</option>
+                                                        <option {{ ((($family_learnings->educational_major ?? '' )=='امي')? "selected" : '' )}}>امي</option>
+                                                        <option {{ ((($family_learnings->educational_major ?? '' )=='ملم')? "selected" : '' )}}>ملم</option>
+                                                        <option {{ ((($family_learnings->educational_major ?? '' )=='ابتدائي')? "selected" : '' )}}>ابتدائي</option>
+                                                        <option {{ ((($family_learnings->educational_major ?? '' )=='اعدادي')? "selected" : '' )}}>اعدادي</option>
+                                                        <option {{ ((($family_learnings->educational_major ?? '' )=='ثانوي')? "selected" : '' )}}>ثانوي</option>
+                                                        <option {{ ((($family_learnings->educational_major ?? '' )=='دبلوم متوسط')? "selected" : '' )}}>دبلوم متوسط</option>
+                                                        <option {{ ((($family_learnings->educational_major ?? '' )=='بكالوريوس')? "selected" : '' )}}>بكالوريوس</option>
+                                                        <option {{ ((($family_learnings->educational_major ?? '' )=='دبلوم عالي')? "selected" : '' )}}>دبلوم عالي</option>
+                                                        <option {{ ((($family_learnings->educational_major ?? '' )=='ماجستير')? "selected" : '' )}}>ماجستير </option>
+                                                        <option {{ ((($family_learnings->educational_major ?? '' )=='دكتوراة')? "selected" : '' )}}>دكتوراة</option>
 
                                                     </select>
-                                                <td><input type="text" class="" name="highest_academic_qualification" value="{{ $ffL->highest_academic_qualification ?? ''}}"></td>
+                                                <td><input type="text" class="" name="highest_academic_qualification" value="{{ $family_learnings->highest_academic_qualification ?? ''}}"></td>
 
 
 
                                                 </td>
                                                 <td><select class="" data-placeholder="Select" name="technical_vocational_qualification">
 
-                                                        <option {{ ((($ffL->technical_vocational_qualification ?? '' )=='الاردن')? "selected" : '' )}}>الاردن</option>
-                                                        <option {{ ((($ffL->technical_vocational_qualification ?? '' )=='فلسطين')? "selected" : '' )}}>فلسطين</option>
-                                                        <option {{ ((($ffL->technical_vocational_qualification ?? '' )=='مصر')? "selected" : '' )}}>مصر</option>
-                                                        <option {{ ((($ffL->technical_vocational_qualification ?? '' )=='دول عربيه اخرى')? "selected" : '' )}}>دول عربيه اخرى</option>
-                                                        <option {{ ((($ffL->technical_vocational_qualification ?? '' )=='روسيا')? "selected" : '' )}}>روسيا</option>
-                                                        <option {{ ((($ffL->technical_vocational_qualification ?? '' )=='دول اسيويه اخرى غير عربيه')? "selected" : '' )}}>دول اسيويه اخرى غير عربيه</option>
-                                                        <option {{ ((($ffL->technical_vocational_qualification ?? '' )=='اوروبا الشرقيه')? "selected" : '' )}}>اوروبا الشرقيه</option>
-                                                        <option {{ ((($ffL->technical_vocational_qualification ?? '' )=='اوروبا الغربيه')? "selected" : '' )}}>اوروبا الغربيه</option>
-                                                        <option {{ ((($ffL->technical_vocational_qualification ?? '' )=='امريكا الشماليه')? "selected" : '' )}}>امريكا الشماليه</option>
-                                                        <option {{ ((($ffL->technical_vocational_qualification ?? '' )=='امريكا الجنوبيه')? "selected" : '' )}}>امريكا الجنوبيه</option>
-                                                        <option {{ ((($ffL->technical_vocational_qualification ?? '' )=='استراليا')? "selected" : '' )}}>استراليا</option>
-                                                        <option {{ ((($ffL->technical_vocational_qualification ?? '' )=='لخرى')? "selected" : '' )}}>لخرى</option>
+                                                        <option {{ ((($family_learnings->technical_vocational_qualification ?? '' )=='الاردن')? "selected" : '' )}}>الاردن</option>
+                                                        <option {{ ((($family_learnings->technical_vocational_qualification ?? '' )=='فلسطين')? "selected" : '' )}}>فلسطين</option>
+                                                        <option {{ ((($family_learnings->technical_vocational_qualification ?? '' )=='مصر')? "selected" : '' )}}>مصر</option>
+                                                        <option {{ ((($family_learnings->technical_vocational_qualification ?? '' )=='دول عربيه اخرى')? "selected" : '' )}}>دول عربيه اخرى</option>
+                                                        <option {{ ((($family_learnings->technical_vocational_qualification ?? '' )=='روسيا')? "selected" : '' )}}>روسيا</option>
+                                                        <option {{ ((($family_learnings->technical_vocational_qualification ?? '' )=='دول اسيويه اخرى غير عربيه')? "selected" : '' )}}>دول اسيويه اخرى غير عربيه</option>
+                                                        <option {{ ((($family_learnings->technical_vocational_qualification ?? '' )=='اوروبا الشرقيه')? "selected" : '' )}}>اوروبا الشرقيه</option>
+                                                        <option {{ ((($family_learnings->technical_vocational_qualification ?? '' )=='اوروبا الغربيه')? "selected" : '' )}}>اوروبا الغربيه</option>
+                                                        <option {{ ((($family_learnings->technical_vocational_qualification ?? '' )=='امريكا الشماليه')? "selected" : '' )}}>امريكا الشماليه</option>
+                                                        <option {{ ((($family_learnings->technical_vocational_qualification ?? '' )=='امريكا الجنوبيه')? "selected" : '' )}}>امريكا الجنوبيه</option>
+                                                        <option {{ ((($family_learnings->technical_vocational_qualification ?? '' )=='استراليا')? "selected" : '' )}}>استراليا</option>
+                                                        <option {{ ((($family_learnings->technical_vocational_qualification ?? '' )=='لخرى')? "selected" : '' )}}>لخرى</option>
 
                                                     </select></td>
                                                 <td><select class="" data-placeholder="Select" name="realationship_of_work">
-                                                <option {{ ($family_work->realationship_of_work ?? '' =='لا يوجد')? "selected" : '' }}>لا يوجد</option>
+                                                        <option {{ ($family_work->realationship_of_work ?? '' =='لا يوجد')? "selected" : '' }}>لا يوجد</option>
                                                         <option {{ ((($family_work->realationship_of_work ?? '' )=='تدريب مهني/تقني قصير في موقع العمل')? "selected" : '' )}}>تدريب مهني/تقني قصير في موقع العمل</option>
                                                         <option {{ ((($family_work->realationship_of_work ?? '' )=='تدريب مهني اقل من 6 شهور')? "selected" : '' )}}>تدريب مهني اقل من 6 شهور</option>
                                                         <option {{ ((($family_work->realationship_of_work ?? '' )=='تدريب مهني 6 لبى اقل من 12 شهر')? "selected" : '' )}}>تدريب مهني 6 لبى اقل من 12 شهر</option>
@@ -418,7 +410,7 @@
                                                 <td><input type="text" class="" name="major_economic_activity" value="{{ $family_work->major_economic_activity ?? ''}}"></td>
                                                 <td><input type="text" class="" name="sector" value="{{$family_work->sector ?? ''}}"></td>
                                                 <td><select class="" data-placeholder="Select" name="workplace">
-                                                
+
                                                         <option {{ ((($family_work->workplace ?? '' )=='خاص وطني داخل المنشات')? "selected" : '' )}}>خاص وطني داخل المنشات</option>
                                                         <option {{ ((($family_work->workplace ?? '' )=='خاص وطني خارج المنشات')? "selected" : '' )}}>خاص وطني خارج المنشات</option>
                                                         <option {{ ((($family_work->workplace ?? '' )=='خاص اجنبي داخل المنشات')? "selected" : '' )}}>خاص اجنبي داخل المنشات</option>
@@ -504,7 +496,7 @@
 
                                 <div class="row">
                                     <div class="col-lg-6">
-                                    
+
                                         <select class="squareSelect" name="Building_condition" data-placeholder="Select">
                                             <option disabled selected>2a-هل المبنى:</option>
                                             <option {{ ((($housing_data->Building_condition ?? '' )=='للسكن فقط')? "selected" : '' )}}>للسكن فقط</option>
@@ -884,7 +876,7 @@
                                     </div>
 
                                 </div>
-                                
+
                                 <div class="row">
                                     <div class="col-lg-6">
                                         <input type="text" class="squareInput" name="Palestine_internet_line" value="{{$information_technologies->Palestine_internet_line ?? ''}}">
@@ -924,25 +916,25 @@
                                     </div>
                                 </div>
 
-                                <div class="row">
-                                    <div class="col-lg-6">
-                                        <input type="text" class="squareInput" name="IPAD" value="{{$information_technologies->IPAD ?? ''}}"">
+                                <div class=" row">
+                                        <div class="col-lg-6">
+                                            <input type="text" class="squareInput" name="IPAD" value="{{$information_technologies->IPAD ?? ''}}"">
                                         <label>47- عدد اجهزه التابلت و ipod في المنزل</label>
 
                                     </div>
-                                    <div class="col-lg-6">
-                                        <input type="text" class="squareInput" name="Artificial_mobile" value="{{$information_technologies->Artificial_mobile ?? ''}}">
-                                        <label>48-عدد اجهزه الهواتف الذكيه في المنزل</label>
+                                    <div class=" col-lg-6">
+                                            <input type="text" class="squareInput" name="Artificial_mobile" value="{{$information_technologies->Artificial_mobile ?? ''}}">
+                                            <label>48-عدد اجهزه الهواتف الذكيه في المنزل</label>
 
+                                        </div>
                                     </div>
-                                </div>
 
-                                <div class="row">
-                                    <div class="col-lg-6">
-                                        <input type="text" class="squareInput" name="invedual_uses" value="{{$information_technologies->invedual_uses ?? ''}}">
-                                        <label>49-عدد افراد الاسره الذين يستخدمون الحاسوب</label>
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <input type="text" class="squareInput" name="invedual_uses" value="{{$information_technologies->invedual_uses ?? ''}}">
+                                            <label>49-عدد افراد الاسره الذين يستخدمون الحاسوب</label>
+                                        </div>
                                     </div>
-                                </div>
                             </fieldset>
 
                             <h3>وفيات الاسره خلال ال 12 شهر السابقه</h3>
@@ -1022,17 +1014,17 @@
                                                 </td>
                                                 <td><select class="" data-placeholder="Select" name="death_during_childbirth">
 
-                                                        <option  {{ ((($housing_data_dead->death_during_childbirth ?? '' )=='نعم')? "selected" : '' )}}>نعم</option>
-                                                        <option  {{ ((($housing_data_dead->death_during_childbirth ?? '' )=='لا')? "selected" : '' )}}>لا</option>
+                                                        <option {{ ((($housing_data_dead->death_during_childbirth ?? '' )=='نعم')? "selected" : '' )}}>نعم</option>
+                                                        <option {{ ((($housing_data_dead->death_during_childbirth ?? '' )=='لا')? "selected" : '' )}}>لا</option>
 
                                                     </select></td>
                                                 <td><select class="" data-placeholder="Select" name="death_during_the_42_days_of_birth">
-                                                        <option  {{ ((($housing_data_dead->death_during_the_42_days_of_birth ?? '' )=='نعم')? "selected" : '' )}}>نعم</option>
-                                                        <option  {{ ((($housing_data_dead->death_during_the_42_days_of_birth ?? '' )=='لا')? "selected" : '' )}}>لا</option>
+                                                        <option {{ ((($housing_data_dead->death_during_the_42_days_of_birth ?? '' )=='نعم')? "selected" : '' )}}>نعم</option>
+                                                        <option {{ ((($housing_data_dead->death_during_the_42_days_of_birth ?? '' )=='لا')? "selected" : '' )}}>لا</option>
                                                     </select></td>
                                                 <td><select class="" data-placeholder="Select" name="Death_due_accident">
-                                                        <option  {{ ((($housing_data_dead->Death_due_accident ?? '' )=='نعم')? "selected" : '' )}}>نعم</option>
-                                                        <option  {{ ((($housing_data_dead->Death_due_accident ?? '' )=='لا')? "selected" : '' )}}>لا</option>
+                                                        <option {{ ((($housing_data_dead->Death_due_accident ?? '' )=='نعم')? "selected" : '' )}}>نعم</option>
+                                                        <option {{ ((($housing_data_dead->Death_due_accident ?? '' )=='لا')? "selected" : '' )}}>لا</option>
                                                     </select></td>
                                             </tr>
                                         </tbody>
@@ -1042,13 +1034,13 @@
                             <input type="submit" class="btn btn-scusess" value="حفظ البيانات">
                         </form>
                     </div>
-                    
+
                 </div>
             </div>
         </div>
         </div>
     </section>
-    
+
     <script src="{{asset('assets/js/app.min.js')}}"></script>
     <script src="{{asset('assets/js/form.min.js')}}"></script>
     <!-- befor
@@ -1065,5 +1057,6 @@
     <script src="{{asset('assets/js/pages/tables/jquery-datatable.js')}}"></script>
     <!-- Knob Js -->
 </body>
+
 </html>
 @endsection

@@ -2,40 +2,42 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use ArielMejiaDev\LarapexCharts\LarapexChart;
 use Illuminate\Support\Facades\DB;
 
-class charts1 extends Controller
+class charts1Controller extends Controller
 {
     public function index()
     {
+        // statistics male and female in the palestine
         $chart = (new LarapexChart)->pieChart()
             ->setTitle('ذكر و انثى')
             ->addData([
-                \App\family__data::where('gender', '=', 'ذكر')->count(),
-                \App\family__data::where('gender', '=', 'انثى')->count(),
+                \App\Models\family__data::where('gender', '=', 'ذكر')->count(),
+                \App\Models\family__data::where('gender', '=', 'انثى')->count(),
             ])
             ->setLabels(['ذكر', 'انثى']);
 
+        // statistics population city in the palestine
         $chart1 = (new LarapexChart)->pieChart()
             ->setTitle('نسبة السكان في كل محافظة في فلسطين')
             ->addData([
-                \App\family__data::where('place', '=', 'نابلس')->count(),
-                \App\family__data::where('place', '=', 'جنين')->count(),
-                \App\family__data::where('place', '=', 'رام الله')->count(),
+                \App\Models\family__data::where('place', '=', 'نابلس')->count(),
+                \App\Models\family__data::where('place', '=', 'جنين')->count(),
+                \App\Models\family__data::where('place', '=', 'رام الله')->count(),
             ])
             ->setLabels(['جنين', 'نابلس', 'رام الله']);
 
+        // statistics religion in the palestine
         $chart2 = (new LarapexChart)->polarAreaChart()
             ->setTitle('نسبة الديانات في فلسطين')
             ->addData([
-                \App\family__data::where('religion', '=', 'مسلم')->count(),
-                \App\family__data::where('religion', '=', 'مسيحي')->count(),
+                \App\Models\family__data::where('religion', '=', 'مسلم')->count(),
+                \App\Models\family__data::where('religion', '=', 'مسيحي')->count(),
             ])
             ->setLabels(['مسلم', 'مسيحي']);
 
-
+        
         $usersmale = DB::table('family__data_marriages')->get();
         $chart3 = (new LarapexChart)->pieChart()
             ->setTitle('نسبة الولادات طيله الحياه الزوجيه(للنساء14 فاكثر)ٍ في فلسطين')
@@ -59,8 +61,8 @@ class charts1 extends Controller
         $chart5 = (new LarapexChart)->donutChart()
             ->setTitle('الحالة الزواجية في فلسطين')
             ->addData([
-                \App\family__data_marriages::where('marriage_status', '=', 'متزوج')->count(),
-                \App\family__data_marriages::where('marriage_status', '=', 'مطلق')->count(),
+                \App\Models\family__data_marriages::where('marriage_status', '=', 'متزوج')->count(),
+                \App\Models\family__data_marriages::where('marriage_status', '=', 'مطلق')->count(),
             ])
             ->setLabels(['متزوج', 'مطلق']);
 
@@ -88,8 +90,8 @@ class charts1 extends Controller
             ->setTitle('نسبة عدد الوفايات ')
             ->setSubtitle('حسب الجنس')
             ->addData([
-                \App\housing_data_dead::where('gender', '=', 'ذكر')->count(),
-                \App\housing_data_dead::where('gender', '=', 'انثى')->count(),
+                \App\Models\housing_data_dead::where('gender', '=', 'ذكر')->count(),
+                \App\Models\housing_data_dead::where('gender', '=', 'انثى')->count(),
             ])
             ->setLabels(['ذكر', 'انثى']);
 
@@ -97,8 +99,8 @@ class charts1 extends Controller
             ->setTitle('نسبة عدد الوفايات ')
             ->setSubtitle('حسب العمر')
             ->addData([
-                \App\housing_data_dead::where('age', '>=', 50)->count(),
-                \App\housing_data_dead::where('age', '<', 50)->count(),
+                \App\Models\housing_data_dead::where('age', '>=', 50)->count(),
+                \App\Models\housing_data_dead::where('age', '<', 50)->count(),
             ])
             ->setLabels(['ما فوق ال 50 عاما', 'ما ادنى من 50 عاما']);
 
@@ -113,6 +115,6 @@ class charts1 extends Controller
             'chart7' => $chart7,
             'chart8' => $chart8,
         ];
-        return view('charts1', $send);
+        return view('Charts.charts1', $send);
     }
 }

@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" dir="rtl">
 
-
-<!-- Mirrored from www.radixtouch.in/templates/admin/lorax/source/rtl/pages/examples/login2.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 03 Nov 2020 20:34:31 GMT -->
 <head>
 	<meta charset="UTF-8">
 	<meta content="width=device-width, initial-scale=1" name="viewport" />
@@ -37,9 +35,6 @@
 <body class="login-page rtl">
 	<div class="limiter">
 		<div class="container-login100 page-background1">
-
-                
-
 			<div class="wrap-login100" style="width: 700px !important;">
             <center>
                 
@@ -127,17 +122,17 @@
 						  <div class="form-group default-select">
 								<select class="form-control" name="city" style="background:transparent;color:#fff;border-bottom: 2px solid rgba(255,255,255,0.24);" >
 								<option disabled selected>أختر المحافظة</option>
-										<option {{ (old('city') =='القدس')? "selected" : '' }} >القدس</option>
-										<option {{ (old('city') =='جنين')? "selected" : '' }} >جنين</option>
-										<option {{ (old('city') =='طوباس')? "selected" : '' }} >طوباس</option>
-										<option {{ (old('city') =='طولكرم')? "selected" : '' }} >طولكرم</option>
-										<option {{ (old('city') =='نابلس')? "selected" : '' }} >نابلس</option>
-										<option {{ (old('city') =='قلقيلية')? "selected" : '' }} >قلقيلية</option>
-										<option {{ (old('city') =='سلفيت')? "selected" : '' }} >سلفيت</option>
-										<option {{ (old('city') =='رام الله والبيرة')? "selected" : '' }} >رام الله والبيرة</option>
-										<option {{ (old('city') =='أريحا')? "selected" : '' }} >أريحا</option>
-										<option {{ (old('city') =='بيت لحم')? "selected" : '' }} >بيت لحم</option>
-										<option {{ (old('city') =='الخليل')? "selected" : '' }} >الخليل</option>
+										<option >القدس</option>
+										<option >جنين</option>
+										<option >طوباس</option>
+										<option >طولكرم</option>
+										<option >نابلس</option>
+										<option >قلقيلية</option>
+										<option >سلفيت</option>
+										<option >رام الله والبيرة</option>
+										<option >أريحا</option>
+										<option >بيت لحم</option>
+										<option >الخليل</option>
 								</select>
                              </div>
 							</div>
@@ -176,25 +171,6 @@
 
 						
 					</div>	
-
-						
-
-					
-
-						
-
-
-                    
-					
-
-
-					
-
-
-						
-
-					
-					
 					<div class="container-login100-form-btn">
 						<button class="login100-form-btn">
 							حفظ
@@ -221,7 +197,4 @@
     <script src="{{asset('assets/js/bundles/bootstrap-colorpicker/dist/js/bootstrap-colorpicker.js')}}"></script>
 	<script src="{{asset('assets/js/form.min.js')}}"></script>
 </body>
-
-
-<!-- Mirrored from www.radixtouch.in/templates/admin/lorax/source/rtl/pages/examples/login2.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 03 Nov 2020 20:34:31 GMT -->
 </html>

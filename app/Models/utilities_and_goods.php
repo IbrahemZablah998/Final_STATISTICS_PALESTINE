@@ -1,10 +1,10 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class family__data extends Model
+class utilities_and_goods extends Model
 {
     protected $guarded = [];
 

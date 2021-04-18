@@ -5,52 +5,57 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
 
-class family__data extends Controller
+class familyController extends Controller
 {
+    // Cut off the line when the guest open the private page
     public function __construct()
     {
         $this->middleware('auth');
     }
+
+    // Show the citizen page 
     public function index()
     {
-        $family = \App\family__data::where('user_id', auth()->user()->id)->first();
-        $family_learnings = \App\family__data_learnings::where('user_id', auth()->user()->id)->first();
-        $family_works = \App\family__data_works::where('user_id', auth()->user()->id)->first();
-        $family_marriages = \App\family__data_marriages::where('user_id', auth()->user()->id)->first();
+        // Family Groups
+        $family = \App\Models\family__data::where('user_id', auth()->user()->id)->first();
+        $family_learnings = \App\Models\family__data_learnings::where('user_id', auth()->user()->id)->first();
+        $family_works = \App\Models\family__data_works::where('user_id', auth()->user()->id)->first();
+        $family_marriages = \App\Models\family__data_marriages::where('user_id', auth()->user()->id)->first();
+        // House Groups
+        $housing_data = \App\Models\housing_datas::where('user_id', auth()->user()->id)->first();
+        $utilities_and_good = \App\Models\utilities_and_goods::where('user_id', auth()->user()->id)->first();
+        $information_technologie = \App\Models\information_technologies::where('user_id', auth()->user()->id)->first();
+        // Deads Groups
+        $housing_data_dead = \App\Models\housing_data_dead::where('user_id', auth()->user()->id)->first();
 
-            $housing_data = \App\housing_datas::where('user_id', auth()->user()->id)->first();
-            $utilities_and_good = \App\utilities_and_goods::where('user_id', auth()->user()->id)->first();
-            $information_technologie = \App\information_technologies::where('user_id', auth()->user()->id)->first();
-            $housing_data = \App\housing_datas::where('user_id', auth()->user()->id)->first();
-            $utilities_and_good = \App\utilities_and_goods::where('user_id', auth()->user()->id)->first();
-            $information_technologie = \App\information_technologies::where('user_id', auth()->user()->id)->first();
-            $housing_data_dead = \App\housing_data_dead::where('user_id', auth()->user()->id)->first();
-
-            $data = array(
-                'id' => auth()->user(),
-                'ff' => $family,
-                'ffL' => $family_learnings,
-                'family_work' => $family_works,
-                'family_marriages' => $family_marriages,
-                'housing_data' => $housing_data,
-                'utilities_and_goods' => $utilities_and_good,
-                'information_technologies' => $information_technologie,
-                'housing_data_dead' => $housing_data_dead,
-            );
-            return view('citizen')->with($data);
-        
+        $data = array(
+            'id' => auth()->user(),
+            'family' => $family,
+            'family_learnings' => $family_learnings,
+            'family_work' => $family_works,
+            'family_marriages' => $family_marriages,
+            'housing_data' => $housing_data,
+            'utilities_and_goods' => $utilities_and_good,
+            'information_technologies' => $information_technologie,
+            'housing_data_dead' => $housing_data_dead,
+        );
+        return view('citizen')->with($data);
     }
 
+    // sotre information to the database
     public function store(Request $request)
     {
-        $family_marriages = \App\family__data_marriages::where('user_id', auth()->user()->id)->first();
-        $family_works = \App\family__data_works::where('user_id', auth()->user()->id)->first();
-        $family_learnings = \App\family__data_learnings::where('user_id', auth()->user()->id)->first();
-        $family = \App\family__data::where('user_id', auth()->user()->id)->first();
-        $housing_data = \App\housing_datas::where('user_id', auth()->user()->id)->first();
-        $utilities_and_good = \App\utilities_and_goods::where('user_id', auth()->user()->id)->first();
-        $information_technologies = \App\information_technologies::where('user_id', auth()->user()->id)->first();
-        $housing_data_dead = \App\housing_data_dead::where('user_id', auth()->user()->id)->first();
+        // Family Groups
+        $family = \App\Models\family__data::where('user_id', auth()->user()->id)->first();
+        $family_learnings = \App\Models\family__data_learnings::where('user_id', auth()->user()->id)->first();
+        $family_works = \App\Models\family__data_works::where('user_id', auth()->user()->id)->first();
+        $family_marriages = \App\Models\family__data_marriages::where('user_id', auth()->user()->id)->first();
+        // House Groups
+        $housing_data = \App\Models\housing_datas::where('user_id', auth()->user()->id)->first();
+        $utilities_and_good = \App\Models\utilities_and_goods::where('user_id', auth()->user()->id)->first();
+        $information_technologies = \App\Models\information_technologies::where('user_id', auth()->user()->id)->first();
+        // Deads Groups
+        $housing_data_dead = \App\Models\housing_data_dead::where('user_id', auth()->user()->id)->first();
 
         // There are the information of the data base family__data
         $field_family__data = request()->validate([
@@ -88,6 +93,7 @@ class family__data extends Controller
             $store_family__data->user_id = auth()->user()->id;
             $store_family__data->save();
         }
+
         // There are the information of the data base family__data_learnings
         $field_family__data_learnings = request()->validate([
             'enroll_education' => 'required',
@@ -108,6 +114,7 @@ class family__data extends Controller
             $store_family__data_learnings->user_id = auth()->user()->id;
             $store_family__data_learnings->save();
         }
+
         // There are the information of the data base family__data_works
         $field_family__data_works = request()->validate([
             'realationship_of_work' => 'required',
@@ -233,7 +240,6 @@ class family__data extends Controller
             'landline_telephone' => 'required',
             'home_library' => 'required',
         ]);
-
         if ($utilities_and_good == null) {
             $find_housing_datas = \App\housing_datas::where('user_id', auth()->user()->id)->first();
             $store_utilities_and_goods = new \App\utilities_and_goods;
@@ -278,7 +284,6 @@ class family__data extends Controller
             'Artificial_mobile' => 'required',
             'invedual_uses' => 'required',
         ]);
-
         if ($information_technologies == null) {
             $find_housing_datas = \App\housing_datas::where('user_id', auth()->user()->id)->first();
             $store_information_technologies = new \App\information_technologies;
@@ -309,7 +314,6 @@ class family__data extends Controller
             'death_during_the_42_days_of_birth' => 'required',
             'Death_due_accident' => 'required',
         ]);
-
         if ($housing_data_dead == null) {
 
             $find_housing_datas = \App\housing_datas::where('user_id', auth()->user()->id)->first();

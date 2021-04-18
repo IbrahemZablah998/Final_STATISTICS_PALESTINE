@@ -1,8 +1,5 @@
 <!DOCTYPE html>
 <html lang="en" dir="rtl">
-
-
-<!-- Mirrored from www.radixtouch.in/templates/admin/lorax/source/rtl/pages/examples/login2.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 03 Nov 2020 20:34:31 GMT -->
 <head>
 	<meta charset="UTF-8">
 	<meta content="width=device-width, initial-scale=1" name="viewport" />
@@ -27,12 +24,8 @@
 <body class="login-page rtl">
 	<div class="limiter">
 		<div class="container-login100 page-background1">
-
-                
-
 			<div class="wrap-login100" >
             <center>
-                
                 @if ($message = Session::get('error'))
                 <div class="alert alert-danger alert-block mt-3 mb-0">
                     <button type="button" class="close" data-dismiss="alert">×</button>
@@ -60,37 +53,13 @@
 					<span class="login100-form-title p-b-34 p-t-27">
 					التأكد
 					</span>
-                    
-					<!-- <div class="wrap-input100 validate-inpu1t" data-validate="Enter username">
-						<input class="input100" type="email" name="email" placeholder="الايميل" autofocus>
-						<i class="material-icons focus-input1001">email</i>
-					</div> -->
 					<div class="wrap-input100 validate-input1" data-validate="Enter password">
 						<input class="input100" type="password" name="password" placeholder="ادخل الرمز المرسل الى البريد الالكتروني">
 						<i class="material-icons focus-input1001">lock</i>
 					</div>
-					
-					<!-- <div class="container-login100-form-btn" >
-						<button class="login100-form-btn">
-							تسجيل دخول
-						</button>
-					</div>
-					
-
-					<div class="container-login100-form-btn">
-						<button class="login100-form-btn">
-							 الغاء
-						</button>
-					</div> -->
-
-				
-
-							
-
 						<div class="body">
                             <div class="container-login100-form-btn">
                                 <button type="button" class="btn btn-outline-primary btn-border-radius login100-form-btn" style="padding: 20px;" >تسجيل دخول</button>
-                                <!-- <button type="button" class="btn btn-outline-primary btn-border-radius login100-form-btn">الغاء</button> -->
 							</div>
 
 							<div class="text-center p-t-50">

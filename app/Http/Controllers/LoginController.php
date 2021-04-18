@@ -6,14 +6,14 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use PHPMailer\PHPMailer\Exception;
 use PHPMailer\PHPMailer\PHPMailer;
-use App\User; 
+use App\Models\User; 
 use Auth;
 
 class LoginController extends Controller
 {
     public function login()
     {
-        return view('login');
+        return view('Auth.login');
     }
 
     public function logout(Request $request)
@@ -61,7 +61,7 @@ class LoginController extends Controller
 
     public function register()
     {
-        return view('register');
+        return view('Auth.register');
     }
 
     public function checkRegister(Request $request)
@@ -149,7 +149,7 @@ class LoginController extends Controller
 
     public function email()
     {
-        return view('email');
+        return view('Auth.email');
     }
 
     public function checkEmail(Request $request)
@@ -197,6 +197,6 @@ class LoginController extends Controller
 
     public function confirmation()
     {
-        return view('confirmation');
+        return view('Auth.confirmation');
     }
 }
