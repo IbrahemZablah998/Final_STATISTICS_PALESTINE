@@ -18,8 +18,9 @@ Route::get('/', function () {
     return view('login');
 });
 // register
-Route::get('/login', "LoginController@login");
-Route::post('/login/checklogin', "LoginController@checkLogin");
+// Route::get('login', "LoginController@login");
+Route::get('login', [ 'as' => 'login', 'uses' => 'LoginController@login']);
+Route::post('login/checklogin', "LoginController@checkLogin");
 
 Route::get('/register', "LoginController@register");
 Route::post('/register/checkRegister', "LoginController@checkRegister");
@@ -31,6 +32,8 @@ Route::get('/confirmation', function () {
     return view('confirmation');
 });
 
+Route::get('logout', 'LoginController@logout');
+
 // fill data
 Route::get('/citizen', "family__data@index");
 Route::post('/citizen', "family__data@store");
@@ -40,7 +43,6 @@ Route::get('/charts1', "charts1@index");
 Route::get('/charts2', function () {
     return view('charts2');
 });
-
 
 Route::get('/index1', function () {
     return view('index1');

@@ -25,6 +25,7 @@ class CreateFamilyDatasTable extends Migration
             $table->float('periodAt_theCurrent_residenceIn_fullTime', 3, 1);
             
             $table->string('previous_place');
+            // $table->integer('Family_number_in_the_building');
             $table->string('reason_change_residence');
             $table->string('religion');
             $table->string('asylum_status');
