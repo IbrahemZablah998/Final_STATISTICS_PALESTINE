@@ -74,7 +74,7 @@ class familyController extends Controller
             'periodAt_theCurrent_residenceIn_fullTime' => 'required',
         ]);
         if ($family == null) {
-            $store_family__data = new \App\family__data;
+            $store_family__data = new \App\Models\family__data;
             $store_family__data->fullName = auth()->user()->name;
             $store_family__data->relationship = ($field_family__data['relationship']);
             $store_family__data->gender = ($field_family__data['gender']);
@@ -104,7 +104,7 @@ class familyController extends Controller
 
         ]);
         if ($family_learnings == null) {
-            $store_family__data_learnings = new \App\family__data_learnings;
+            $store_family__data_learnings = new \App\Models\family__data_learnings;
             $store_family__data_learnings->enroll_education = $field_family__data_learnings['enroll_education'];
             // $store_family__data_learnings->id = auth()->user()->id;
             $store_family__data_learnings->number_of_years_schooling = $field_family__data_learnings['number_of_years_schooling'];
@@ -128,7 +128,7 @@ class familyController extends Controller
             'vacations' => 'required',
         ]);
         if ($family_works == null) {
-            $store_family__data_works = new \App\family__data_works;
+            $store_family__data_works = new \App\Models\family__data_works;
             // $store_family__data_works->id = auth()->user()->id;
             $store_family__data_works->realationship_of_work  = $field_family__data_works['realationship_of_work'];
             $store_family__data_works->overtime_work = $field_family__data_works['overtime_work'];
@@ -154,15 +154,15 @@ class familyController extends Controller
             'number_for_annual_a_live' => 'required',
         ]);
         if ($family_marriages == null) {
-            $store_family__data_marriages = new \App\family__data_marriages;
+            $store_family__data_marriages = new \App\Models\family__data_marriages;
             // $store_family__data_marriages->id = auth()->user()->id;
-            $store_family__data_marriages->marriage_status = $field_family__data_marriages['marriage_status'];
-            $store_family__data_marriages->age_first_marriage = $field_family__data_marriages['age_first_marriage'];
-            $store_family__data_marriages->duration_marriage = $field_family__data_marriages['duration_marriage'];
-            $store_family__data_marriages->number_for_life_born_a_live = $field_family__data_marriages['number_for_life_born_a_live'];
-            $store_family__data_marriages->number_for_life_a_live = $field_family__data_marriages['number_for_life_a_live'];
-            $store_family__data_marriages->number_for_annual_born_a_live = $field_family__data_marriages['number_for_annual_born_a_live'];
-            $store_family__data_marriages->number_for_annual_a_live = $field_family__data_marriages['number_for_annual_a_live'];
+            $store_family__data_marriages->marriage_status = $request->input('marriage_status');
+            $store_family__data_marriages->age_first_marriage = $request->input('age_first_marriage');
+            $store_family__data_marriages->duration_marriage = $request->input('duration_marriage');
+            $store_family__data_marriages->number_for_life_born_a_live = $request->input('number_for_life_born_a_live');
+            $store_family__data_marriages->number_for_life_a_live = $request->input('number_for_life_a_live');
+            $store_family__data_marriages->number_for_annual_born_a_live = $request->input('number_for_annual_born_a_live');
+            $store_family__data_marriages->number_for_annual_a_live = $request->input('number_for_annual_a_live');
             $store_family__data_marriages->user_id = auth()->user()->id;
             $store_family__data_marriages->save();
         }
@@ -189,7 +189,7 @@ class familyController extends Controller
             'main_of_energy_for_heat' => 'required',
         ]);
         if ($housing_data == null) {
-            $store_housing_datas = new \App\housing_datas;
+            $store_housing_datas = new \App\Models\housing_datas;
             // $store_housing_datas->id = auth()->user()->id;
             $store_housing_datas->Residential_unit_number = $field_housing_datas['Residential_unit_number'];
             $store_housing_datas->Building_counter_number = $field_housing_datas['Building_counter_number'];
@@ -241,8 +241,8 @@ class familyController extends Controller
             'home_library' => 'required',
         ]);
         if ($utilities_and_good == null) {
-            $find_housing_datas = \App\housing_datas::where('user_id', auth()->user()->id)->first();
-            $store_utilities_and_goods = new \App\utilities_and_goods;
+            $find_housing_datas = \App\Models\housing_datas::where('user_id', auth()->user()->id)->first();
+            $store_utilities_and_goods = new \App\Models\utilities_and_goods;
             $store_utilities_and_goods->kitchen = $field_utilities_and_goods['kitchen'];
             $store_utilities_and_goods->bathrooms = $field_utilities_and_goods['bathrooms'];
             $store_utilities_and_goods->id = $find_housing_datas->Family_number_in_the_building;
@@ -285,8 +285,8 @@ class familyController extends Controller
             'invedual_uses' => 'required',
         ]);
         if ($information_technologies == null) {
-            $find_housing_datas = \App\housing_datas::where('user_id', auth()->user()->id)->first();
-            $store_information_technologies = new \App\information_technologies;
+            $find_housing_datas = \App\Models\housing_datas::where('user_id', auth()->user()->id)->first();
+            $store_information_technologies = new \App\Models\information_technologies;
             $store_information_technologies->id = $find_housing_datas->Family_number_in_the_building;
             $store_information_technologies->Palestine_internet_line = $field_information_technologies['Palestine_internet_line'];
             $store_information_technologies->Israel_internet_line = $field_information_technologies['Israel_internet_line'];
@@ -316,8 +316,8 @@ class familyController extends Controller
         ]);
         if ($housing_data_dead == null) {
 
-            $find_housing_datas = \App\housing_datas::where('user_id', auth()->user()->id)->first();
-            $store_housing_data_dead = new \App\housing_data_dead;
+            $find_housing_datas = \App\Models\housing_datas::where('user_id', auth()->user()->id)->first();
+            $store_housing_data_dead = new \App\Models\housing_data_dead;
             $store_housing_data_dead->Full_name_dead = $field_housing_data_dead['Full_name_dead'];
             $store_housing_data_dead->house_id = $find_housing_datas->Family_number_in_the_building;
             $store_housing_data_dead->gender = $field_housing_data_dead['genders'];

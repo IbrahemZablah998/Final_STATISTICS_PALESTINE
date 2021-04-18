@@ -972,22 +972,22 @@
                                                 <td><input type="name" class="" name="Full_name_dead" value="{{$housing_data_dead->Full_name_dead ?? ''}}"></td>
                                                 <td><select class="" data-placeholder="Select" name="relationships">
 
-                                                        <option {{ ((($housing_data_dead->relationships ?? '' )=='رب الاسره')? "selected" : '' )}}>رب الاسره</option>
-                                                        <option {{ ((($housing_data_dead->relationships ?? '' )=='زوجه/زوج')? "selected" : '' )}}>زوجه/زوج</option>
-                                                        <option {{ ((($housing_data_dead->relationships ?? '' )=='ابن/ابنه')? "selected" : '' )}}>ابن/ابنه</option>
-                                                        <option {{ ((($housing_data_dead->relationships ?? '' )=='اخ/اخت')? "selected" : '' )}}>اخ/اخت</option>
-                                                        <option {{ ((($housing_data_dead->relationships ?? '' )=='حفيد/حفيده')? "selected" : '' )}}>حفيد/حفيده</option>
-                                                        <option {{ ((($housing_data_dead->relationships ?? '' )=='حفيد/حفيده')? "selected" : '' )}}>حفيد/حفيده</option>
-                                                        <option {{ ((($housing_data_dead->relationships ?? '' )=='زوج ابن/زوج بنت')? "selected" : '' )}}>زوج ابن/زوج بنت</option>
-                                                        <option {{ ((($housing_data_dead->relationships ?? '' )=='اقرباء اخرون')? "selected" : '' )}}>اقرباء اخرون</option>
-                                                        <option {{ ((($housing_data_dead->relationships ?? '' )=='اخرون')? "selected" : '' )}}>اخرون</option>
+                                                        <option {{ ((($housing_data_dead->relationship ?? '' )=='رب الاسره')? "selected" : '' )}}>رب الاسره</option>
+                                                        <option {{ ((($housing_data_dead->relationship ?? '' )=='زوجه/زوج')? "selected" : '' )}}>زوجه/زوج</option>
+                                                        <option {{ ((($housing_data_dead->relationship ?? '' )=='ابن/ابنه')? "selected" : '' )}}>ابن/ابنه</option>
+                                                        <option {{ ((($housing_data_dead->relationship ?? '' )=='اخ/اخت')? "selected" : '' )}}>اخ/اخت</option>
+                                                        <option {{ ((($housing_data_dead->relationship ?? '' )=='حفيد/حفيده')? "selected" : '' )}}>حفيد/حفيده</option>
+                                                        <option {{ ((($housing_data_dead->relationship ?? '' )=='حفيد/حفيده')? "selected" : '' )}}>حفيد/حفيده</option>
+                                                        <option {{ ((($housing_data_dead->relationship ?? '' )=='زوج ابن/زوج بنت')? "selected" : '' )}}>زوج ابن/زوج بنت</option>
+                                                        <option {{ ((($housing_data_dead->relationship ?? '' )=='اقرباء اخرون')? "selected" : '' )}}>اقرباء اخرون</option>
+                                                        <option {{ ((($housing_data_dead->relationship ?? '' )=='اخرون')? "selected" : '' )}}>اخرون</option>
                                                     </select>
                                                 </td>
                                                 <td><select class="" data-placeholder="Select" name="genders">
-                                                        <option {{ ((($housing_data_dead->genders ?? '' )=='ذكر')? "selected" : '' )}}>ذكر</option>
-                                                        <option {{ ((($housing_data_dead->genders ?? '' )=='انثى')? "selected" : '' )}}>انثى</option>
+                                                        <option {{ ((($housing_data_dead->gender ?? '' )=='ذكر')? "selected" : '' )}}>ذكر</option>
+                                                        <option {{ ((($housing_data_dead->gender ?? '' )=='انثى')? "selected" : '' )}}>انثى</option>
                                                     </select></td>
-                                                <td><input type="number" class="" name="ages" value="{{$housing_data_dead->ages ?? ''}}"></td>
+                                                <td><input type="number" class="" name="ages" value="{{$housing_data_dead->age ?? ''}}"></td>
                                                 <td><select class="" data-placeholder="Select" name="Death_certificate">
                                                         <option {{ ((($housing_data_dead->Death_certificate ?? '' )=='لا يوجد')? "selected" : '' )}}>لا يوجد</option>
                                                         <option {{ ((($housing_data_dead->Death_certificate ?? '' )=='تدريب مهني/تقني قصير في موقع العمل')? "selected" : '' )}}>تدريب مهني/تقني قصير في موقع العمل</option>
