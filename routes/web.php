@@ -39,9 +39,8 @@ Route::get('/floatChart', function () {
 });
 
 // route Tables
-Route::get('/gropTable', function () {
-    return view('Tables.gropTable');
-});
+Route::get('/gropTable', "groupTableController@index");
+
 Route::get('/exportedTable', function () {
     return view('Tables.exportedTable');
 });

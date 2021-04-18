@@ -3,8 +3,9 @@
 
 
 <!-- Mirrored from www.radixtouch.in/templates/admin/lorax/source/rtl/pages/examples/login2.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 03 Nov 2020 20:34:31 GMT -->
+
 <head>
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <title>Online Statistics</title>
     <!-- Favicon-->
@@ -16,15 +17,16 @@
     <link href="{{asset('assets/css/style.css')}}" rel="stylesheet">
     <!-- You can choose a theme from css/styles instead of get all themes -->
     <link href="{{asset('assets/css/styles/all-themes.css')}}" rel="stylesheet" />
-	<style>
-		.contact100-form-checkbox .form-check .form-check-label,
-		.wrap-input100 .material-icons {
-			text-align: right;
-		}
-		.default-select option{
-			color:#000;
-		}
-	</style>
+    <style>
+        .contact100-form-checkbox .form-check .form-check-label,
+        .wrap-input100 .material-icons {
+            text-align: right;
+        }
+
+        .default-select option {
+            color: #000;
+        }
+    </style>
 </head>
 
 <body class="light rtl">
@@ -45,8 +47,7 @@
     <nav class="navbar">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a href="#" onClick="return false;" class="navbar-toggle collapsed" data-toggle="collapse"
-                    data-target="#navbar-collapse" aria-expanded="false"></a>
+                <a href="#" onClick="return false;" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>
                 <a href="#" onClick="return false;" class="bars"></a>
                 <a class="navbar-brand" href="">
                     <img src="{{asset('assets/images/logo.png')}}" alt="" />
@@ -70,8 +71,7 @@
                     </li>
                     <!-- #END# Notifications-->
                     <li class="dropdown user_profile">
-                        <a href="#" onClick="return false;" class="dropdown-toggle" data-toggle="dropdown"
-                            role="button">
+                        <a href="#" onClick="return false;" class="dropdown-toggle" data-toggle="dropdown" role="button">
                             <img src="{{asset('assets/images/prof.jpg')}}" width="32" height="32" alt="User">
                         </a>
                         <ul class="dropdown-menu pullDown">
@@ -121,26 +121,20 @@
                     <li class="sidebar-user-panel active">
                         <div class="user-panel">
                             <div class=" image">
-                                <img src="{{asset('assets/images/prof.jpg')}}" class="img-circle user-img-circle"
-                                    alt="User Image" />
+                                <img src="{{asset('assets/images/prof.jpg')}}" class="img-circle user-img-circle" alt="User Image" />
                             </div>
                         </div>
                         <div class="profile-usertitle">
-                            <div class="sidebar-userpic-name"> Abdullah Allan </div>
-                            <div class="profile-usertitle-job ">Manager </div>
+                            <div class="sidebar-userpic-name"> Graduation Team </div>
+                            <div class="profile-usertitle-job ">المسؤول </div>
                         </div>
                     </li>
                     <li class="active">
-                        <a href="{{url('/index1')}}" onClick="return false;" >
+                        <a href="{{url('/index1')}}" onClick="return false;">
                             <i class="fas fa-tachometer-alt"></i>
-                            <span>Home</span>
+                            <span>الصفحة الرئيسية</span>
                         </a>
                     </li>
-                    <!-- <a href="file:///C:/AppServ/www/lorax/pages/examples/profile.html" class="txt1">
-                            <i class="fas fa-address-book"></i>
-                            <span>Profile</span>
-                        </a> -->
-                      
                     <li>
                         <a href="#" onClick="return false;" class="menu-toggle">
                             <i class="fab fa-wpforms"></i>
@@ -153,44 +147,44 @@
                             <li>
                                 <a href="">Advanced Form</a>
                             </li>
-                            
+
                         </ul>
                     </li>
                     <li>
                         <a href="#" onClick="return false;" class="menu-toggle">
                             <i class="fas fa-table"></i>
-                            <span>Tables</span>
+                            <span>الجداول</span>
                         </a>
                         <ul class="ml-menu">
-                            <li>
-                                <a href="{{url('/gropTable')}}">gropTable</a>
+                            <li>    
+                                <a href="{{url('/gropTable')}}">الجدول</a>
                             </li>
                             <li>
-                                <a href="{{url('/exportedTable')}}">Export Table</a>
+                                <a href="{{url('/exportedTable')}}">تخزين الجداول</a>
                             </li>
-                           
+
 
                         </ul>
                     </li>
-                   
+
                     <li>
                         <a href="#" onClick="return false;" class="menu-toggle">
                             <i class="fas fa-chart-line"></i>
-                            <span>Charts</span>
+                            <span>الرسوم البيانية</span>
                         </a>
                         <ul class="ml-menu">
                             <li>
-                            <a href="{{url('/charts1')}}">charts1</a>
-                               
+                                <a href="{{url('/charts1')}}">الرسوم البيانية الاولى</a>
+
                             </li>
                             <li>
-                                <a href="{{url('/charts2')}}">chart2</a>
+                                <a href="{{url('/charts2')}}">الرسوم البيانية التانية</a>
                             </li>
 
                             <li>
                                 <a href="{{url('/floatChart')}}">float chart</a>
                             </li>
-                            
+
                         </ul>
                     </li>
                 </ul>
@@ -215,17 +209,13 @@
                         </div>
                         <div class="rightSetting">
                             <p>SIDEBAR MENU COLORS</p>
-                            <button type="button"
-                                class="btn btn-sidebar-light btn-border-radius p-l-20 p-r-20">Light</button>
-                            <button type="button"
-                                class="btn btn-sidebar-dark btn-default btn-border-radius p-l-20 p-r-20">Dark</button>
+                            <button type="button" class="btn btn-sidebar-light btn-border-radius p-l-20 p-r-20">Light</button>
+                            <button type="button" class="btn btn-sidebar-dark btn-default btn-border-radius p-l-20 p-r-20">Dark</button>
                         </div>
                         <div class="rightSetting">
                             <p>THEME COLORS</p>
-                            <button type="button"
-                                class="btn btn-theme-light btn-border-radius p-l-20 p-r-20">Light</button>
-                            <button type="button"
-                                class="btn btn-theme-dark btn-default btn-border-radius p-l-20 p-r-20">Dark</button>
+                            <button type="button" class="btn btn-theme-light btn-border-radius p-l-20 p-r-20">Light</button>
+                            <button type="button" class="btn btn-theme-dark btn-default btn-border-radius p-l-20 p-r-20">Dark</button>
                         </div>
                         <div class="rightSetting">
                             <p>SKINS</p>
@@ -257,8 +247,7 @@
                             <p>Disk Space</p>
                             <div class="sidebar-progress">
                                 <div class="progress m-t-20">
-                                    <div class="progress-bar l-bg-cyan shadow-style width-per-45" role="progressbar"
-                                        aria-valuenow="45" aria-valuemin="0" aria-valuemax="100"></div>
+                                    <div class="progress-bar l-bg-cyan shadow-style width-per-45" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100"></div>
                                 </div>
                                 <span class="progress-description">
                                     <small>26% remaining</small>
@@ -269,8 +258,7 @@
                             <p>Server Load</p>
                             <div class="sidebar-progress">
                                 <div class="progress m-t-20">
-                                    <div class="progress-bar l-bg-orange shadow-style width-per-63" role="progressbar"
-                                        aria-valuenow="63" aria-valuemin="0" aria-valuemax="100"></div>
+                                    <div class="progress-bar l-bg-orange shadow-style width-per-63" role="progressbar" aria-valuenow="63" aria-valuemin="0" aria-valuemax="100"></div>
                                 </div>
                                 <span class="progress-description">
                                     <small>Highly Loaded</small>
@@ -292,16 +280,16 @@
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                         <ul class="breadcrumb breadcrumb-style ">
                             <li class="breadcrumb-item">
-                                <h4 class="page-title">Export Table</h4>
+                                <h4 class="page-title">الجدول الرئيسي</h4>
                             </li>
                             <li class="breadcrumb-item bcrumb-1">
                                 <a href="../../index-2.html">
-                                    <i class="fas fa-home"></i> Home</a>
+                                    <i class="fas fa-home"></i> الصفحة الرئيسية</a>
                             </li>
                             <li class="breadcrumb-item bcrumb-2">
-                                <a href="#" onClick="return false;">Tables</a>
+                                <a href="#" onClick="return false;">الجداول</a>
                             </li>
-                            <li class="breadcrumb-item active">Export Tables</li>
+                            <li class="breadcrumb-item active">الجدول</li>
                         </ul>
                     </div>
                 </div>
