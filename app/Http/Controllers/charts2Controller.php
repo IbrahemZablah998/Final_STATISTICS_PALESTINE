@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use ArielMejiaDev\LarapexCharts\LarapexChart;
 use Illuminate\Support\Facades\DB;
 
-class charts1Controller extends Controller
+class charts2Controller extends Controller
 {
     public function index()
     {
@@ -115,6 +115,6 @@ class charts1Controller extends Controller
             'chart7' => $chart7,
             'chart8' => $chart8,
         ];
-        return view('Charts.charts1', $send);
+        return view('Charts.charts2', $send);
     }
 }

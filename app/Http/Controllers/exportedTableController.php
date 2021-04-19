@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\DB;
 
-class groupTableController extends Controller
+class exportedTableController extends Controller
 {
     public function index()
     {
@@ -20,6 +20,6 @@ class groupTableController extends Controller
             // 'family' => $family,
             'family__data_learnings' => $family__data_learnings,
         );
-        return view('Tables.gropTable')->with($data);
+        return view('Tables.exportedTable')->with($data);
     }
 }

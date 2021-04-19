@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use PHPMailer\PHPMailer\Exception;
 use PHPMailer\PHPMailer\PHPMailer;
-use App\Models\User; 
+use App\Models\User;
 use Auth;
 
 class LoginController extends Controller
@@ -61,6 +61,17 @@ class LoginController extends Controller
 
     public function register()
     {
+        // for($i=0; $i< 100000; $i++) {
+        //     $User = new \App\Models\User;
+        //     $User->name = "محمد حمد محمد حمد";
+        //     $User->id = rand(100000000,900000000);
+        //     $User->place = "نابلس";
+        //     $User->mobile = "0597222599";
+        //     $User->email = "test" . rand(1,2000000)*10 . "@test.com";
+        //     $User->password = "147852369";
+        //     $User->privilige = "مواطن";
+        //     $User->save();
+        // }
         return view('Auth.register');
     }
 

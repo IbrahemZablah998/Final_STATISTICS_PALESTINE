@@ -130,7 +130,7 @@
                         </div>
                     </li>
                     <li class="active">
-                        <a href="{{url('/index1')}}" onClick="return false;">
+                        <a href="{{url('/index1')}}" onClick="return true;">
                             <i class="fas fa-tachometer-alt"></i>
                             <span>الصفحة الرئيسية</span>
                         </a>
@@ -147,7 +147,6 @@
                             <li>
                                 <a href="">Advanced Form</a>
                             </li>
-
                         </ul>
                     </li>
                     <li>
@@ -156,7 +155,7 @@
                             <span>الجداول</span>
                         </a>
                         <ul class="ml-menu">
-                            <li>    
+                            <li>
                                 <a href="{{url('/gropTable')}}">الجدول</a>
                             </li>
                             <li>
@@ -299,7 +298,7 @@
                     <div class="card">
                         <div class="header">
                             <h2>
-                                Row Group
+                                البيانات
                             </h2>
                             <ul class="header-dropdown m-r--5">
                                 <li class="dropdown">
@@ -320,7 +319,6 @@
                                 </li>
                             </ul>
                         </div>
-
                         <div class="body">
                             <table id="tableGroup" class="table table-bordered table-hover  dataTable" style="width: 100%">
                                 <thead>
@@ -333,18 +331,15 @@
                                         <th>الالتحاق بالتعليم</th>
                                     </tr>
                                 </thead>
-
                                 <tbody>
-                                    <?php $i = 0; ?>
-                                    @foreach ($family as $familys)
+                                    @foreach ($family__data_learnings as $family__data_learning)
                                     <tr>
-                                        <td>{{ $familys->fullName }}</td>
-                                        <td>{{ $familys->user_id }}</td>
-                                        <td>{{ $familys->place }}</td>
-                                        <td>{{ $familys->age }}</td>
-                                        <td>{{ $familys->religion }}</td>
-                                        <td>{{ $family__data_learnings[$i]->enroll_education }}</td>
-                                        <?php $i++; ?>
+                                        <td>{{ $family__data_learning->fullName }}</td>
+                                        <td>{{ $family__data_learning->user_id }}</td>
+                                        <td>{{ $family__data_learning->place }}</td>
+                                        <td>{{ $family__data_learning->age }}</td>
+                                        <td>{{ $family__data_learning->religion }}</td>
+                                        <td>{{ $family__data_learning->enroll_education }}</td>
                                     </tr>
                                     @endforeach
                                 </tbody>
@@ -363,7 +358,4 @@
     <script src="{{asset('assets/js/pages/tables/jquery-datatable.js')}}"></script>
     <!-- Demo Js -->
 </body>
-
-
-
 </html>

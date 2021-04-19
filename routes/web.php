@@ -31,19 +31,15 @@ Route::post('/citizen', "familyController@store");
 
 // route charts
 Route::get('/charts1', "charts1Controller@index");
-Route::get('/charts2', function () {
-    return view('Charts.charts2');
-});
+Route::get('/charts2', "charts2Controller@index");
+
 Route::get('/floatChart', function () {
     return view('Charts.floatChart');
 });
 
 // route Tables
 Route::get('/gropTable', "groupTableController@index");
-
-Route::get('/exportedTable', function () {
-    return view('Tables.exportedTable');
-});
+Route::get('/exportedTable', "exportedTableController@index");
 
 Route::get('/index1', function () {
     return view('index1');

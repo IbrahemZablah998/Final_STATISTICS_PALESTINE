@@ -3,11 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <!-- <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"> -->
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Chart Sample</title>
-    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>Online Statistics</title>
     <!-- Favicon-->
     <link rel="icon" href="{{asset('assets/images/favicon.ico')}}" type="image/x-icon">
     <!-- Plugins Core Css -->
@@ -29,7 +26,7 @@
     </style>
 </head>
 
-<body class="h-screen bg-gray-100">
+<body class="h-screen bg-gray-100z ">
     <!-- Page Loader -->
     <div class="page-loader-wrapper">
         <div class="loader">
@@ -72,7 +69,7 @@
                         <a href="#" onClick="return false;" class="dropdown-toggle" data-toggle="dropdown" role="button">
                             <img src="{{asset('assets/images/prof.jpg')}}" width="32" height="32" alt="User">
                         </a>
-                        <ul class="dropdown-menu pullDown">
+                        <ul class="dropdown-menu pullDown ">
                             <li class="body">
                                 <ul class="user_dw_menu">
                                     <li>
@@ -114,7 +111,7 @@
         <!-- Left Sidebar -->
         <aside id="leftsidebar" class="sidebar">
             <!-- Menu -->
-            <div class="menu">
+            <div class="menu rtl">
                 <ul class="list">
                     <li class="sidebar-user-panel active">
                         <div class="user-panel">
@@ -123,14 +120,14 @@
                             </div>
                         </div>
                         <div class="profile-usertitle">
-                            <div class="sidebar-userpic-name"> Abdullah Allan </div>
-                            <div class="profile-usertitle-job ">Manager </div>
+                            <div class="sidebar-userpic-name"> Graduation Team </div>
+                            <div class="profile-usertitle-job ">المسؤول </div>
                         </div>
                     </li>
                     <li class="active">
-                        <a href="{{url('/index1')}}" onClick="return false;">
+                        <a href="{{url('/index1')}}" onClick="return true;">
                             <i class="fas fa-tachometer-alt"></i>
-                            <span>Home</span>
+                            <span>الصفحة الرئيسية</span>
                         </a>
                     </li>
                     <li>
@@ -151,111 +148,31 @@
                     <li>
                         <a href="#" onClick="return false;" class="menu-toggle">
                             <i class="fas fa-table"></i>
-                            <span>Tables</span>
+                            <span>الجداول</span>
                         </a>
                         <ul class="ml-menu">
                             <li>
-                                <a href="{{url('/gropTable')}}">gropTable</a>
+                                <a href="{{url('/gropTable')}}">الجدول</a>
                             </li>
                             <li>
-                                <a href="{{url('/exportedTable')}}">Export Table</a>
+                                <a href="{{url('/exportedTable')}}">تخزين الجداول</a>
                             </li>
 
 
                         </ul>
                     </li>
-
                     <li>
                         <a href="#" onClick="return false;" class="menu-toggle">
                             <i class="fas fa-chart-line"></i>
-                            <span>Charts</span>
+                            <span>الرسوم البيانية</span>
                         </a>
                         <ul class="ml-menu">
                             <li>
-                                <a href="{{url('/charts1')}}">charts1</a>
+                                <a href="{{url('/charts1')}}">الرسوم البيانية الاولى</a>
 
                             </li>
                             <li>
-                                <a href="{{url('/charts2')}}">chart2</a>
-                            </li>
-
-                            <li>
-                                <a href="{{url('/floatChart')}}">float chart</a>
-                            </li>
-
-                        </ul>
-                    </li>
-
-                </ul>
-            </div>
-            <!-- #Menu -->
-        </aside>
-        <aside id="leftsidebar" class="sidebar">
-            <!-- Menu -->
-            <div class="menu">
-                <ul class="list">
-                    <li class="sidebar-user-panel active">
-                        <div class="user-panel">
-                            <div class=" image">
-                                <img src="{{asset('assets/images/prof.jpg')}}" class="img-circle user-img-circle" alt="User Image" />
-                            </div>
-                        </div>
-                        <div class="profile-usertitle">
-                            <div class="sidebar-userpic-name"> Abdullah Allan </div>
-                            <div class="profile-usertitle-job ">Manager </div>
-                        </div>
-                    </li>
-                    <li class="active">
-                        <a href="{{url('/index1')}}" onClick="return false;">
-                            <i class="fas fa-tachometer-alt"></i>
-                            <span>Home</span>
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#" onClick="return false;" class="menu-toggle">
-                            <i class="fab fa-wpforms"></i>
-                            <span>Forms</span>
-                        </a>
-                        <ul class="ml-menu">
-                            <li>
-                                <a href="">Basic Form</a>
-                            </li>
-                            <li>
-                                <a href="">Advanced Form</a>
-                            </li>
-
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#" onClick="return false;" class="menu-toggle">
-                            <i class="fas fa-table"></i>
-                            <span>Tables</span>
-                        </a>
-                        <ul class="ml-menu">
-                            <li>
-                                <a href="{{url('/gropTable')}}">gropTable</a>
-                            </li>
-                            <li>
-                                <a href="{{url('/exportedTable')}}">Export Table</a>
-                            </li>
-
-
-                        </ul>
-                    </li>
-
-                    <li>
-                        <a href="#" onClick="return false;" class="menu-toggle">
-                            <i class="fas fa-chart-line"></i>
-                            <span>Charts</span>
-                        </a>
-                        <ul class="ml-menu">
-                            <li>
-                                <a href="{{url('/charts1')}}">charts1</a>
-
-                            </li>
-                            <li>
-                                <a href="{{url('/charts2')}}">chart2</a>
+                                <a href="{{url('/charts2')}}">الرسوم البيانية التانية</a>
                             </li>
 
                             <li>
@@ -349,11 +266,12 @@
                 </div>
             </div>
         </aside>
+
         <!-- #END# Right Sidebar -->
         <section class="content">
             <div class="container-fluid">
                 <div class="block-header">
-                    <div class="row">
+                    <div class="row rtl">
                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                             <ul class="breadcrumb breadcrumb-style ">
                                 <li class="breadcrumb-item">
@@ -379,8 +297,8 @@
                                 {!! $chart->container() !!}
                             </div>
                             <div class="body">
-                                <div >
-                                <script src="{{ LarapexChart::cdn() }}"></script>
+                                <div>
+                                    <script src="{{ LarapexChart::cdn() }}"></script>
                                     {{ $chart->script() }}
                                 </div>
                             </div>
@@ -394,8 +312,8 @@
                             </div>
                             <div class="body">
                                 <div>
-                                <script src="{{ LarapexChart::cdn() }}"></script>
-                                {{ $chart1->script() }}
+                                    <script src="{{ LarapexChart::cdn() }}"></script>
+                                    {{ $chart1->script() }}
                                 </div>
                             </div>
                         </div>
@@ -408,8 +326,8 @@
                             </div>
                             <div class="body">
                                 <div>
-                                <script src="{{ LarapexChart::cdn() }}"></script>
-                                {{ $chart2->script() }}
+                                    <script src="{{ LarapexChart::cdn() }}"></script>
+                                    {{ $chart2->script() }}
                                 </div>
                             </div>
                         </div>
@@ -422,8 +340,8 @@
                             </div>
                             <div class="body">
                                 <div>
-                                <script src="{{ LarapexChart::cdn() }}"></script>
-                                {{ $chart3->script() }}
+                                    <script src="{{ LarapexChart::cdn() }}"></script>
+                                    {{ $chart3->script() }}
                                 </div>
                             </div>
                         </div>
@@ -436,8 +354,8 @@
                             </div>
                             <div class="body">
                                 <div>
-                                <script src="{{ LarapexChart::cdn() }}"></script>
-                                {{ $chart4->script() }}
+                                    <script src="{{ LarapexChart::cdn() }}"></script>
+                                    {{ $chart4->script() }}
                                 </div>
                             </div>
                         </div>
@@ -450,8 +368,8 @@
                             </div>
                             <div class="body">
                                 <div>
-                                <script src="{{ LarapexChart::cdn() }}"></script>
-                                {{ $chart5->script() }}
+                                    <script src="{{ LarapexChart::cdn() }}"></script>
+                                    {{ $chart5->script() }}
                                 </div>
                             </div>
                         </div>
@@ -464,8 +382,8 @@
                             </div>
                             <div class="body">
                                 <div>
-                                <script src="{{ LarapexChart::cdn() }}"></script>
-                                {{ $chart6->script() }}
+                                    <script src="{{ LarapexChart::cdn() }}"></script>
+                                    {{ $chart6->script() }}
                                 </div>
                             </div>
                         </div>
@@ -478,8 +396,8 @@
                             </div>
                             <div class="body">
                                 <div>
-                                <script src="{{ LarapexChart::cdn() }}"></script>
-                                {{ $chart7->script() }}
+                                    <script src="{{ LarapexChart::cdn() }}"></script>
+                                    {{ $chart7->script() }}
                                 </div>
                             </div>
                         </div>
@@ -492,8 +410,8 @@
                             </div>
                             <div class="body">
                                 <div>
-                                <script src="{{ LarapexChart::cdn() }}"></script>
-                                {{ $chart8->script() }}
+                                    <script src="{{ LarapexChart::cdn() }}"></script>
+                                    {{ $chart8->script() }}
                                 </div>
                             </div>
                         </div>
@@ -502,9 +420,6 @@
 
             </div>
         </section>
-
-
-
         <!-- Plugins Js -->
         <script src="{{asset('assets/js/app.min.js')}}"></script>
         <script src="{{asset('assets/js/chart.min.js')}}"></script>
