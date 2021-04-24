@@ -298,8 +298,8 @@
                                 {!! $chart->container() !!}
                             </div>
                             <div class="body">
-                                <div >
-                                <script src="{{ LarapexChart::cdn() }}"></script>
+                                <div>
+                                    <script src="{{ LarapexChart::cdn() }}"></script>
                                     {{ $chart->script() }}
                                 </div>
                             </div>
@@ -313,8 +313,8 @@
                             </div>
                             <div class="body">
                                 <div>
-                                <script src="{{ LarapexChart::cdn() }}"></script>
-                                {{ $chart1->script() }}
+                                    <script src="{{ LarapexChart::cdn() }}"></script>
+                                    {{ $chart1->script() }}
                                 </div>
                             </div>
                         </div>
@@ -327,8 +327,8 @@
                             </div>
                             <div class="body">
                                 <div>
-                                <script src="{{ LarapexChart::cdn() }}"></script>
-                                {{ $chart2->script() }}
+                                    <script src="{{ LarapexChart::cdn() }}"></script>
+                                    {{ $chart2->script() }}
                                 </div>
                             </div>
                         </div>
@@ -341,8 +341,8 @@
                             </div>
                             <div class="body">
                                 <div>
-                                <script src="{{ LarapexChart::cdn() }}"></script>
-                                {{ $chart3->script() }}
+                                    <script src="{{ LarapexChart::cdn() }}"></script>
+                                    {{ $chart3->script() }}
                                 </div>
                             </div>
                         </div>
@@ -355,8 +355,8 @@
                             </div>
                             <div class="body">
                                 <div>
-                                <script src="{{ LarapexChart::cdn() }}"></script>
-                                {{ $chart4->script() }}
+                                    <script src="{{ LarapexChart::cdn() }}"></script>
+                                    {{ $chart4->script() }}
                                 </div>
                             </div>
                         </div>
@@ -369,8 +369,8 @@
                             </div>
                             <div class="body">
                                 <div>
-                                <script src="{{ LarapexChart::cdn() }}"></script>
-                                {{ $chart5->script() }}
+                                    <script src="{{ LarapexChart::cdn() }}"></script>
+                                    {{ $chart5->script() }}
                                 </div>
                             </div>
                         </div>
@@ -383,8 +383,8 @@
                             </div>
                             <div class="body">
                                 <div>
-                                <script src="{{ LarapexChart::cdn() }}"></script>
-                                {{ $chart6->script() }}
+                                    <script src="{{ LarapexChart::cdn() }}"></script>
+                                    {{ $chart6->script() }}
                                 </div>
                             </div>
                         </div>
@@ -397,8 +397,8 @@
                             </div>
                             <div class="body">
                                 <div>
-                                <script src="{{ LarapexChart::cdn() }}"></script>
-                                {{ $chart7->script() }}
+                                    <script src="{{ LarapexChart::cdn() }}"></script>
+                                    {{ $chart7->script() }}
                                 </div>
                             </div>
                         </div>
@@ -411,31 +411,74 @@
                             </div>
                             <div class="body">
                                 <div>
-                                <script src="{{ LarapexChart::cdn() }}"></script>
-                                {{ $chart8->script() }}
+                                    <script src="{{ LarapexChart::cdn() }}"></script>
+                                    {{ $chart8->script() }}
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <!-- -->
+                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                        <div class="card">
+                            <div class="header">
+                                {!! $chart9->container() !!}
+                            </div>
+                            <div class="body">
+                                <div>
+                                    <script src="{{ LarapexChart::cdn() }}"></script>
+                                    {{ $chart9->script() }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- -->
+                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                        <div class="card">
+                            <div class="header">
+                                {!! $chart10->container() !!}
+                            </div>
+                            <div class="body">
+                                <div>
+                                    <script src="{{ LarapexChart::cdn() }}"></script>
+                                    {{ $chart10->script() }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- -->
+                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                        <div class="card">
+                            <div class="header">
+                                {!! $chart11->container() !!}
+                            </div>
+                            <div class="body">
+                                <div>
+                                    <script src="{{ LarapexChart::cdn() }}"></script>
+                                    {{ $chart11->script() }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- -->
                 </div>
-
             </div>
-            </section>
-    <!-- Plugins Js -->
-    <script src="{{asset('assets/js/app.min.js')}}"></script>
-    <script src="{{asset('assets/js/table.min.js')}}"></script>
-    <!-- Custom Js -->
-    <script src="{{asset('assets/js/admin.js')}}"></script>
-    <script src="{{asset('assets/js/pages/tables/jquery-datatable.js')}}"></script>
-    <!-- Demo Js -->
+        </section>
+        <!-- Plugins Js -->
+        <script src="{{asset('assets/js/app.min.js')}}"></script>
+        <script src="{{asset('assets/js/table.min.js')}}"></script>
+        <!-- Custom Js -->
+        <script src="{{asset('assets/js/admin.js')}}"></script>
+        <script src="{{asset('assets/js/pages/tables/jquery-datatable.js')}}"></script>
+        <!-- Demo Js -->
 
-    <script src="{{asset('assets/js/bundles/export-tables/dataTables.buttons.min.js')}}"></script>
-    <script src="{{asset('assets/js/bundles/export-tables/buttons.flash.min.js')}}"></script>
-    <script src="{{asset('assets/js/bundles/export-tables/jszip.min.js')}}"></script>
-    <script src="{{asset('assets/js/bundles/export-tables/pdfmake.min.js')}}"></script>
-    <script src="{{asset('assets/js/bundles/export-tables/vfs_fonts.js')}}"></script>
-    <script src="{{asset('assets/js/bundles/export-tables/buttons.html5.min.js')}}"></script>
-    <script src="{{asset('assets/js/bundles/export-tables/buttons.print.min.js')}}"></script>
-    <script src="{{asset('assets/js/pages/tables/jquery-datatable.js')}}"></script>
+        <script src="{{asset('assets/js/bundles/export-tables/dataTables.buttons.min.js')}}"></script>
+        <script src="{{asset('assets/js/bundles/export-tables/buttons.flash.min.js')}}"></script>
+        <script src="{{asset('assets/js/bundles/export-tables/jszip.min.js')}}"></script>
+        <script src="{{asset('assets/js/bundles/export-tables/pdfmake.min.js')}}"></script>
+        <script src="{{asset('assets/js/bundles/export-tables/vfs_fonts.js')}}"></script>
+        <script src="{{asset('assets/js/bundles/export-tables/buttons.html5.min.js')}}"></script>
+        <script src="{{asset('assets/js/bundles/export-tables/buttons.print.min.js')}}"></script>
+        <script src="{{asset('assets/js/pages/tables/jquery-datatable.js')}}"></script>
 </body>
+
 </html>

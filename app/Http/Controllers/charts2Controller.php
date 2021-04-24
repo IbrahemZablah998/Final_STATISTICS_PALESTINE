@@ -37,7 +37,7 @@ class charts2Controller extends Controller
             ])
             ->setLabels(['مسلم', 'مسيحي']);
 
-        
+
         $usersmale = DB::table('family__data_marriages')->get();
         $chart3 = (new LarapexChart)->pieChart()
             ->setTitle('نسبة الولادات طيله الحياه الزوجيه(للنساء14 فاكثر)ٍ في فلسطين')
@@ -104,6 +104,27 @@ class charts2Controller extends Controller
             ])
             ->setLabels(['ما فوق ال 50 عاما', 'ما ادنى من 50 عاما']);
 
+        $chart9 = (new LarapexChart)->lineChart()
+            ->setTitle('احصائية اعداد نمو السكان ')
+            ->setSubtitle('جميع المحافظات خلال 6 سنوات')
+            ->addData('اجمالي عدد السكان في فلسطين', [2000248, 3111248, 3781248, 3999248, 4781248, 5781248])
+            ->setXAxis(['2016', '2017', '2018', '2019', '2020', '2021']);
+
+        $chart10 = (new LarapexChart)->barChart()
+            ->setTitle('نسبة عدد السكان في كل محافظة')
+            ->setSubtitle('حسب الجنس')
+            ->addData('الذكور', [6, 9, 3, 4, 10, 8])
+            ->addData('الاناث', [7, 3, 8, 2, 6, 4])
+            ->setXAxis(['نابلس', 'جنين', 'رام الله', 'الخليل', 'بيت لحم', 'طولكرم']);
+
+        $chart11 = (new LarapexChart)->horizontalBarChart()
+            ->setTitle('Los Angeles vs Miami.')
+            ->setSubtitle('Wins during season 2021.')
+            ->setColors(['#FFC107', '#D32F2F'])
+            ->addData('San Francisco', [6, 9, 3, 4, 10, 8])
+            ->addData('Boston', [7, 3, 8, 2, 6, 4])
+            ->setXAxis(['January', 'February', 'March', 'April', 'May', 'June']);
+            
         $send = [
             'chart' => $chart,
             'chart1' => $chart1,
@@ -114,6 +135,9 @@ class charts2Controller extends Controller
             'chart6' => $chart6,
             'chart7' => $chart7,
             'chart8' => $chart8,
+            'chart9' => $chart9,
+            'chart10' => $chart10,
+            'chart11' => $chart11,
         ];
         return view('Charts.charts2', $send);
     }
