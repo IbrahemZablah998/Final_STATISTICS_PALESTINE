@@ -7,6 +7,11 @@ use Illuminate\Support\Facades\DB;
 
 class charts1Controller extends Controller
 {
+    // Cut off the line when the guest open the private page
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function index()
     {
         // statistics male and female in the palestine
@@ -22,11 +27,23 @@ class charts1Controller extends Controller
         $chart1 = (new LarapexChart)->pieChart()
             ->setTitle('نسبة السكان في كل محافظة في فلسطين')
             ->addData([
-                \App\Models\User::where('place', '=', 'نابلس')->count(),
-                \App\Models\User::where('place', '=', 'جنين')->count(),
-                \App\Models\User::where('place', '=', 'رام الله')->count(),
+                \App\Models\family__data::where('place', '=', 'جنين')->count(),
+                \App\Models\family__data::where('place', '=', 'الخليل')->count(),
+                \App\Models\family__data::where('place', '=', 'نابلس')->count(),
+                \App\Models\family__data::where('place', '=', 'رام الله')->count(),
+                \App\Models\family__data::where('place', '=', 'طولكرم')->count(),
+                \App\Models\family__data::where('place', '=', 'قلقيلة')->count(),
+                \App\Models\family__data::where('place', '=', 'اريحا')->count(),
             ])
-            ->setLabels(['جنين', 'نابلس', 'رام الله']);
+            ->setLabels([
+                'جنين',
+                'الخليل',
+                'نابلس',
+                'رام الله',
+                'طولكرم',
+                'قلقيلة',
+                'اريحا',
+            ]);
 
         // statistics religion in the palestine
         $chart2 = (new LarapexChart)->polarAreaChart()
@@ -37,7 +54,7 @@ class charts1Controller extends Controller
             ])
             ->setLabels(['مسلم', 'مسيحي']);
 
-        
+
         $usersmale = DB::table('family__data_marriages')->get();
         $chart3 = (new LarapexChart)->pieChart()
             ->setTitle('نسبة الولادات طيله الحياه الزوجيه(للنساء14 فاكثر)ٍ في فلسطين')
@@ -63,8 +80,13 @@ class charts1Controller extends Controller
             ->addData([
                 \App\Models\family__data_marriages::where('marriage_status', '=', 'متزوج')->count(),
                 \App\Models\family__data_marriages::where('marriage_status', '=', 'مطلق')->count(),
+                \App\Models\family__data_marriages::where('marriage_status', '=', 'لم يتزوج ابدا')->count(),
             ])
-            ->setLabels(['متزوج', 'مطلق']);
+            ->setLabels([
+                'متزوج',
+                'مطلق',
+                'لم يتزوج',
+            ]);
 
         $usersmale = DB::table('Information_technologies')->get();
         $chart6 = (new LarapexChart)->donutChart()
@@ -104,6 +126,29 @@ class charts1Controller extends Controller
             ])
             ->setLabels(['ما فوق ال 50 عاما', 'ما ادنى من 50 عاما']);
 
+        $chart10 = (new LarapexChart)->barChart()
+            ->setTitle('نسبة عدد السكان في كل محافظة')
+            ->setSubtitle('حسب الجنس')
+            // 6, 9, 3, 4, 10, 
+            // 7, 3, 8, 2, 6, 
+            ->addData('الذكور', [
+                \App\Models\family__data::where('place', '=', 'نابلس')->where('gender', '=', 'ذكر')->count(),
+                \App\Models\family__data::where('place', '=', 'جنين')->where('gender', '=', 'ذكر')->count(),
+                \App\Models\family__data::where('place', '=', 'رام الله')->where('gender', '=', 'ذكر')->count(),
+                \App\Models\family__data::where('place', '=', 'الخليل')->where('gender', '=', 'ذكر')->count(),
+                \App\Models\family__data::where('place', '=', 'قلقيلة')->where('gender', '=', 'ذكر')->count(),
+                \App\Models\family__data::where('place', '=', 'طولكرم')->where('gender', '=', 'ذكر')->count(),
+            ])
+            ->addData('الاناث', [
+                \App\Models\family__data::where('place', '=', 'نابلس')->where('gender', '=', 'انثى')->count(),
+                \App\Models\family__data::where('place', '=', 'جنين')->where('gender', '=', 'انثى')->count(),
+                \App\Models\family__data::where('place', '=', 'رام الله')->where('gender', '=', 'انثى')->count(),
+                \App\Models\family__data::where('place', '=', 'الخليل')->where('gender', '=', 'انثى')->count(),
+                \App\Models\family__data::where('place', '=', 'قلقيلة')->where('gender', '=', 'انثى')->count(),
+                \App\Models\family__data::where('place', '=', 'طولكرم')->where('gender', '=', 'انثى')->count(),
+            ])
+            ->setXAxis(['نابلس', 'جنين', 'رام الله', 'الخليل', 'قلقيلة', 'طولكرم']);
+
         $send = [
             'chart' => $chart,
             'chart1' => $chart1,
@@ -114,6 +159,7 @@ class charts1Controller extends Controller
             'chart6' => $chart6,
             'chart7' => $chart7,
             'chart8' => $chart8,
+            'chart10' => $chart10,
         ];
         return view('Charts.charts1', $send);
     }

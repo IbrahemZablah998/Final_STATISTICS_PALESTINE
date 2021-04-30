@@ -4,13 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\DB;
 
-class exportedTableController extends Controller
+class exportedTableNablusController extends Controller
 {
-    // Cut off the line when the guest open the private page
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
     public function index()
     {
         $family = \App\Models\family__data::all();
@@ -19,12 +14,16 @@ class exportedTableController extends Controller
         $family__data_learnings = DB::table('family__datas')
             ->join('family__data_learnings', 'family__datas.user_id', '=', 'family__data_learnings.user_id')
             ->select('family__datas.*', 'family__data_learnings.*')
+            ->where('family__datas.place', '=', 'نابلس')
             ->get();
         $data = array(
-            // 'id' => auth()->user(),
-            // 'family' => $family,
             'family__data_learnings' => $family__data_learnings,
         );
-        return view('Tables.exportedTable')->with($data);
+        return view('Tables.palestine.Nablus.exportedTablenablus')->with($data);
+    }
+    // Cut off the line when the guest open the private page
+    public function __construct()
+    {
+        $this->middleware('auth');
     }
 }

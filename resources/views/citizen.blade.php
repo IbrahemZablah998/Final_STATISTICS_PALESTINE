@@ -3,7 +3,6 @@
 @section('content')
 <!DOCTYPE html>
 <html lang="{{ app()->getLocale() }}">
-@extends('template.navbar')
 
 <!-- Mirrored from www.radixtouch.in/templates/admin/lorax/source/rtl/pages/dashboard/dashboard3.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 03 Nov 2020 20:17:32 GMT -->
 
@@ -66,31 +65,8 @@
     </style>
 
 </head>
-<script>
-    function myCreateFunction() {
-        var table = document.getElementById("myTable");
-        var row = table.insertRow(0);
-        var cell1 = row.insertCell(0);
-        var cell2 = row.insertCell(1);
-        cell1.innerHTML = "NEW CELL1";
-        cell2.innerHTML = "NEW CELL2";
-    }
-
-    function myDeleteFunction() {
-        document.getElementById("myTable").deleteRow(0);
-    }
-</script>
-
 <body class="light rtl side-closed submenu-closed">
     <section class="content">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                    <!-- عزيزي المواطن,
-                    امامك استبانه -->
-                </div>
-            </div>
-        </div>
         <div class="row clearfix">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="card">
@@ -142,8 +118,11 @@
 
                             <h3>بيانات افراد الاسرة</h3>
                             <fieldset>
-                                <button onclick="myCreateFunction()">Create row</button>
-                                <button onclick="myDeleteFunction()">Delete row</button>
+                                <!-- <button onclick="myCreateFunction()">Create row</button> -->
+                                    <!-- <input type="submit" class="btn btn-scusess" value="اضافة ابناء" name="submitbutton"> -->
+
+                                <!-- <input type="submit" class="btn btn-scusess" value="حفظ البيانات"> -->
+                                <!-- <button onclick="myDeleteFunction()">Delete row</button> -->
                                 <div class="body table-responsive">
                                     <table class="table table-bordered" style="overflow-x: scroll !important;min-width:300% !important;">
                                         <thead>
@@ -171,7 +150,7 @@
 
                                             <tr>
                                                 <th scope="row">1</th>
-                                                <td><input type="text" class="" name="FullName" value="{{ $id->name ?? ''}}"></td>
+                                                <td><input type="text" class="" name="FullName" value="{{ $id->name ?? ''}}" {{ $id->name ? 'disabled' : ''}}></td>
                                                 <td><select class="" data-placeholder="Select" name="relationship">
                                                         <!-- <option disabled selected>16-المصدر الرئيسي للطاقه المستخدمة في التدفئة</option> -->
                                                         <option {{ ((($family->relationShip ?? '') == 'اخ/اخت')? "selected" : '' )}}>اخ/اخت</option>
@@ -194,7 +173,7 @@
                                                 </td>
                                                 <td><input type="number" class="" name="age" value="{{$family->age ?? ''}}"></td>
                                                 <td><input type="text" class="" name="nationality" value="{{$family->nationality ?? ''}}"></td>
-                                                <td><input type="number" class="" name="id" value="{{ $id->id  ?? ''}}"></td>
+                                                <td><input type="number" class="" name="id" value="{{ $id->id  ?? ''}}" {{ $id->id ? 'disabled' : ''}}></td>
                                                 <td><input type="text" class="" name="placeOfMotherTimeInvidualBirth" value="{{$family->placeOfMotherTimeInvidualBirth ?? ''}}"></td>
                                                 <td><input type="text" class="" name="place" value="{{ $id->place  ?? ''}}"></td>
                                                 <td><input type="number" class="" name="periodAt_theCurrent_residenceIn_fullTime" value="{{$family->periodAt_theCurrent_residenceIn_fullTime ?? ''}}"></td>
@@ -1031,7 +1010,8 @@
                                     </table>
                                 </div>
                             </fieldset>
-                            <input type="submit" class="btn btn-scusess" value="حفظ البيانات">
+                            <input type="submit" class="btn btn-scusess" value="حفظ البيانات" name="submitbutton">
+                            <a href="{{ url('addChild') }}" class="btn btn-scusess">اضافة ابناء</a>
                         </form>
                     </div>
 

@@ -1,5 +1,4 @@
 @extends('layouts.navbar')
-
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1" name="viewport" />
@@ -24,7 +23,6 @@
         }
     </style>
 </head>
-<!-- #END# Right Sidebar -->
 <div>
     <section class="content">
         <div class="container-fluid">
@@ -40,9 +38,9 @@
                                     <i class="fas fa-home"></i> الصفحة الرئيسية</a>
                             </li>
                             <li class="breadcrumb-item bcrumb-2">
-                                <a href="#" onClick="return false;">الرسوم </a>
+                                <a href="#" onClick="return false;">نابلس</a>
                             </li>
-                            <li class="breadcrumb-item active">الرسوم البيانية</li>
+                            <li class="breadcrumb-item active">الاحصاء في مدينة نابلس</li>
                         </ul>
                     </div>
                 </div>
@@ -174,36 +172,8 @@
                         </div>
                     </div>
                 </div>
-                <!-- -->
-                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
-                    <div class="card">
-                        <div class="header">
-                            {!! $chart9->container() !!}
-                        </div>
-                        <div class="body">
-                            <div>
-                                <script src="{{ LarapexChart::cdn() }}"></script>
-                                {{ $chart9->script() }}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- -->
-                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
-                    <div class="card">
-                        <div class="header">
-                            {!! $chart10->container() !!}
-                        </div>
-                        <div class="body">
-                            <div>
-                                <script src="{{ LarapexChart::cdn() }}"></script>
-                                {{ $chart10->script() }}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- -->
             </div>
+
         </div>
     </section>
 </div>

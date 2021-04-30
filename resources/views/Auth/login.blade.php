@@ -3,6 +3,7 @@
 
 
 <!-- Mirrored from www.radixtouch.in/templates/admin/lorax/source/rtl/pages/examples/login2.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 03 Nov 2020 20:34:31 GMT -->
+
 <head>
 	<meta charset="UTF-8">
 	<meta content="width=device-width, initial-scale=1" name="viewport" />
@@ -28,31 +29,30 @@
 	<div class="limiter">
 		<div class="container-login100 page-background1">
 
-                
 
-			<div class="wrap-login100" >
-            <center>
-                
-                @if ($message = Session::get('error'))
-                <div class="alert alert-danger alert-block mt-3 mb-0">
-                    <button type="button" class="close" data-dismiss="alert">×</button>
-                    <strong>{{ $message }}</strong>
-                </div>
-                @endif
+			<div class="wrap-login100">
+				<center>
 
-                @if (count($errors) > 0)
-                <div class="alert alert-danger mt-0 mb-0">
-                    <ul>
-                    @foreach($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                    @endforeach
-                    </ul>
-                </div>
-                @endif
+					@if ($message = Session::get('error'))
+					<div class="alert alert-danger alert-block mt-3 mb-0">
+						<button type="button" class="close" data-dismiss="alert">×</button>
+						<strong>{{ $message }}</strong>
+					</div>
+					@endif
 
-                </center>
+					@if (count($errors) > 0)
+					<div class="alert alert-danger mt-0 mb-0">
+						<ul>
+							@foreach($errors->all() as $error)
+							<li>{{ $error }}</li>
+							@endforeach
+						</ul>
+					</div>
+					@endif
+
+				</center>
 				<form action="{{action('LoginController@checkLogin')}}" method="POST" class="login100-form validate-form">
-                    @csrf
+					@csrf
 
 					<span class="login100-form-logo">
 						<img alt="" src="{{asset('assets/images/prof.jpg')}}">
@@ -60,7 +60,7 @@
 					<span class="login100-form-title p-b-34 p-t-27">
 						تسجيل الدخول
 					</span>
-                    
+
 					<div class="wrap-input100 validate-inpu1t" data-validate="Enter username">
 						<input class="input100" type="email" name="email" placeholder="الايميل" autofocus>
 						<i class="material-icons focus-input1001">email</i>
@@ -69,7 +69,7 @@
 						<input class="input100" type="password" name="password" placeholder="كلمة المرور">
 						<i class="material-icons focus-input1001">lock</i>
 					</div>
-					
+
 					<div class="container-login100-form-btn">
 						<button class="login100-form-btn">
 							تسجيل دخول
@@ -92,7 +92,7 @@
 							</div>
 						</div>
 					</div>
-					
+
 				</form>
 			</div>
 		</div>
@@ -109,4 +109,5 @@
 
 
 <!-- Mirrored from www.radixtouch.in/templates/admin/lorax/source/rtl/pages/examples/login2.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 03 Nov 2020 20:34:31 GMT -->
+
 </html>

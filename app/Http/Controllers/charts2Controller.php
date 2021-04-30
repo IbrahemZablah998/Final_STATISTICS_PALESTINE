@@ -7,6 +7,11 @@ use Illuminate\Support\Facades\DB;
 
 class charts2Controller extends Controller
 {
+    // Cut off the line when the guest open the private page
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function index()
     {
         // statistics male and female in the palestine
@@ -22,9 +27,9 @@ class charts2Controller extends Controller
         $chart1 = (new LarapexChart)->pieChart()
             ->setTitle('نسبة السكان في كل محافظة في فلسطين')
             ->addData([
-                \App\Models\User::where('place', '=', 'نابلس')->count(),
-                \App\Models\User::where('place', '=', 'جنين')->count(),
-                \App\Models\User::where('place', '=', 'رام الله')->count(),
+                \App\Models\family__data::where('place', '=', 'نابلس')->count(),
+                \App\Models\family__data::where('place', '=', 'جنين')->count(),
+                \App\Models\family__data::where('place', '=', 'رام الله')->count(),
             ])
             ->setLabels(['جنين', 'نابلس', 'رام الله']);
 
@@ -113,18 +118,27 @@ class charts2Controller extends Controller
         $chart10 = (new LarapexChart)->barChart()
             ->setTitle('نسبة عدد السكان في كل محافظة')
             ->setSubtitle('حسب الجنس')
-            ->addData('الذكور', [6, 9, 3, 4, 10, 8])
-            ->addData('الاناث', [7, 3, 8, 2, 6, 4])
-            ->setXAxis(['نابلس', 'جنين', 'رام الله', 'الخليل', 'بيت لحم', 'طولكرم']);
+            // 6, 9, 3, 4, 10, 
+            // 7, 3, 8, 2, 6, 
+            ->addData('الذكور', [
+                \App\Models\family__data::where('place', '=', 'نابلس')->where('gender', '=', 'ذكر')->count(),
+                \App\Models\family__data::where('place', '=', 'جنين')->where('gender', '=', 'ذكر')->count(),
+                \App\Models\family__data::where('place', '=', 'رام الله')->where('gender', '=', 'ذكر')->count(),
+                \App\Models\family__data::where('place', '=', 'الخليل')->where('gender', '=', 'ذكر')->count(),
+                \App\Models\family__data::where('place', '=', 'قلقيلة')->where('gender', '=', 'ذكر')->count(),
+                \App\Models\family__data::where('place', '=', 'طولكرم')->where('gender', '=', 'ذكر')->count(),
+            ])
+            ->addData('الاناث', [
+                \App\Models\family__data::where('place', '=', 'نابلس')->where('gender', '=', 'انثى')->count(),
+                \App\Models\family__data::where('place', '=', 'جنين')->where('gender', '=', 'انثى')->count(),
+                \App\Models\family__data::where('place', '=', 'رام الله')->where('gender', '=', 'انثى')->count(),
+                \App\Models\family__data::where('place', '=', 'الخليل')->where('gender', '=', 'انثى')->count(),
+                \App\Models\family__data::where('place', '=', 'قلقيلة')->where('gender', '=', 'انثى')->count(),
+                \App\Models\family__data::where('place', '=', 'طولكرم')->where('gender', '=', 'انثى')->count(),
+            ])
+            ->setXAxis(['نابلس', 'جنين', 'رام الله', 'الخليل', 'قلقيلة', 'طولكرم']);
 
-        $chart11 = (new LarapexChart)->horizontalBarChart()
-            ->setTitle('Los Angeles vs Miami.')
-            ->setSubtitle('Wins during season 2021.')
-            ->setColors(['#FFC107', '#D32F2F'])
-            ->addData('San Francisco', [6, 9, 3, 4, 10, 8])
-            ->addData('Boston', [7, 3, 8, 2, 6, 4])
-            ->setXAxis(['January', 'February', 'March', 'April', 'May', 'June']);
-            
+
         $send = [
             'chart' => $chart,
             'chart1' => $chart1,
@@ -137,7 +151,6 @@ class charts2Controller extends Controller
             'chart8' => $chart8,
             'chart9' => $chart9,
             'chart10' => $chart10,
-            'chart11' => $chart11,
         ];
         return view('Charts.charts2', $send);
     }
