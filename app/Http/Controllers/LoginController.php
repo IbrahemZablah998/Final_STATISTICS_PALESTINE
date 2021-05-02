@@ -72,6 +72,7 @@ class LoginController extends Controller
         //     $User->privilige = "مواطن";
         //     $User->save();
         // }
+
         return view('Auth.register');
     }
 
