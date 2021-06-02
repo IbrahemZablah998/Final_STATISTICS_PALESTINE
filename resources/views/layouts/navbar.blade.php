@@ -47,24 +47,13 @@
                             <li class="body">
                                 <ul class="user_dw_menu">
                                     <li>
-                                        <a href="#" onClick="return false;">
-                                            <i class="material-icons">person</i>الملف الشخصي
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" onClick="return false;">
-                                            <i class="material-icons">feedback</i>رأيك يهمنا
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" onClick="return false;">
-                                            <i class="material-icons">help</i>مساعدة
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="{{ URL('logout') }}" onClick="return false;">
+                                        <a href="{{ URL('logout') }}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
                                             <i class="material-icons">power_settings_new</i>تسجيل الخروج
                                         </a>
+                                        <form id="logout-form" action="{{ URL('logout') }}" method="get" class="d-none">
+                                            @csrf
+                                        </form>
                                     </li>
                                 </ul>
                             </li>
@@ -101,6 +90,26 @@
                             <i class="fas fa-tachometer-alt"></i>
                             <span>الصفحة الرئيسية</span>
                         </a>
+                    </li>
+                    <li class="active">
+                        <a href="{{url('/Data_collection_dates')}}" onClick="return true;">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <span>مواعيد جمع البيانات</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" onClick="return false;" class="menu-toggle">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <span>ادارة الموظفين</span>
+                        </a>
+                        <ul class="ml-menu">
+                            <li>
+                                <a href="{{url('/users/create')}}">اضافة موظف</a>
+                            </li>
+                            <li>
+                                <a href="{{url('/users/show')}}">عرض الموظفين</a>
+                            </li>
+                        </ul>
                     </li>
                     <li>
                         <a href="#" onClick="return false;" class="menu-toggle">

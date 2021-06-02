@@ -7,6 +7,9 @@ use Illuminate\Support\Facades\Hash;
 use PHPMailer\PHPMailer\Exception;
 use PHPMailer\PHPMailer\PHPMailer;
 use App\Models\User;
+use Carbon\Carbon;
+use App\Http\Controllers\Controller;
+use DB;
 use Auth;
 
 class LoginController extends Controller
@@ -47,11 +50,16 @@ class LoginController extends Controller
         );
 
         if (Auth::attempt($user_data)) {
+            $created_at = DB::table('datacollectiondates')->where('city', Auth::user()->place)->value('created_at');
+            $ended_at = DB::table('datacollectiondates')->where('city', Auth::user()->place)->value('ended_at');
+            $date1 = Carbon::now()->toDateTimeString();
 
-            if (Auth::user()->privilige == "مواطن") {
+            if (Auth::user()->privilige == "مواطن" && $date1 >= $created_at && $date1 < $ended_at) {
                 return redirect('/citizen');
             } else if (Auth::user()->privilige == "موظف") {
-                return redirect('/index');
+                return redirect('/charts1');
+            } else {
+                return back()->with('error', ' ليس موعد تسجيلك اليوم.');
             }
         } else {
             return back()->with('error', 'خطأ في تسجيل الدخول.');
@@ -61,18 +69,6 @@ class LoginController extends Controller
 
     public function register()
     {
-        // for($i=0; $i< 100000; $i++) {
-        //     $User = new \App\Models\User;
-        //     $User->name = "محمد حمد محمد حمد";
-        //     $User->id = rand(100000000,900000000);
-        //     $User->place = "نابلس";
-        //     $User->mobile = "0597222599";
-        //     $User->email = "test" . rand(1,2000000)*10 . "@test.com";
-        //     $User->password = "147852369";
-        //     $User->privilige = "مواطن";
-        //     $User->save();
-        // }
-
         return view('Auth.register');
     }
 

@@ -40,9 +40,17 @@ Route::post('/addChild', "addChildController@store");
 Route::get('/gropTable', "groupTableController@index");
 Route::get('/exportedTable', "exportedTableController@index");
 
-Route::get('/index1', function () {
-    return view('index1');
-});
+// route Tables for Data_collection_dates
+Route::get('/Data_collection_dates', "Data_collection_dates@index");
+Route::patch('/Data_collection_dates', "Data_collection_dates@update");
+
+// route Users for create new Employee
+Route::get('/users/create', "newEmployeeController@index");
+Route::post('/users/create', "newEmployeeController@store");
+
+
+Route::get('/users/show', "showEmployeeCotroller@index");
+
 
 Route::get('/nablus', "nablusController@index");
 Route::get('/ramallah', "ramallahController@index");
